@@ -1,0 +1,259 @@
+\documentclass[epsfig,12pt]{article}
+\usepackage{epsfig}
+
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\Tr{{\rm Tr}}
+\newcommand{\nfour}{${\cal N}=4\;$}
+\newcommand{\ntwo}{${\mathcal N}=2\,$}
+\newcommand{\none}{${\mathcal N}=1\,$}
+\newcommand{\ntt}{${\mathcal N}=(2,2)\,$}
+\newcommand{\nzt}{${\mathcal N}=(0,2)\,$}
+\newcommand{\tth}{${T^3}\,$}
+\newcommand{\ca}{{\mathcal A}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\cw}{{\mathcal W}}
+\newcommand{\cs}{{\mathcal S}}
+%\newcommand{\vp}{\varphi}
+%\newcommand{\pt}{\partial}
+%\newcommand{\ve}{\varepsilon}
+%\newcommand{\gs}{g^{2}}
+%\newcommand{\qt}{\tilde q}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Notes with regards to SBY}
+
+\subsection{Different effective Lagrangians}
+
+In this section we will comment on the relation between the
+effective Lagrangian derived in Sect.~\ref{hecpnsm} from the large-$N$ expansion
+ and the Veneziano--Yankielowicz
+effective Lagrangian based on  anomalies and supersymmetry.
+For simplicity we will set $m_i =0$ in this section. 
+Generalization to  $m_i \neq 0$ is straightforward. We  assume the heterotic deformation to be small, $u\ll1$.
+
+The $1/N$ expansion allows one to derive an honest-to-god effective
+Lagrangian for the field $\sigma$, valid both in its kinetic and potential parts. The  leading order in
+$1/N$ in the potential part is determined by the diagram depcited in Fig.~\ref{dopone}
+which gives
+\begin{figure}
+\epsfxsize=6cm
+\centerline{\epsfbox{esigma}}
+\caption{\small
+Kinetic term for the  for  $\sigma$ field. }
+\label{dopone}
+\end{figure}
+%%%%%%%%%%%%%
+\beq
+{\mathcal L}_{\rm kin} =\frac{N}{4\pi}\,\frac{1}{2|\sigma|^2}\,| \,  \partial_\mu\sigma \,|^2
+\,.
+\label{fdop1}
+\eeq
+The  virtual $\xi$ momenta saturating the loop integral are of the order of the $\xi$
+mass $\sqrt{2}|\sigma|$. Up to a numerical coefficient this result is obvious since the field
+$\sigma$ has mass-dimension 1.
+
+The potential part following from calculations in Sect.~\ref{hecpnsm}
+is 
+\beq
+{\mathcal L}_{\rm pot} = \frac{N}{4\pi}\left\{\Lambda^2 +2|\sigma|^2\left[
+\ln\frac{2|\sigma|^2}{\Lambda^2}-1+u\right]
+\right\}.
+\label{fdop2}
+\eeq
+All corrections to (\ref{fdop1}) and  (\ref{fdop2}) are suppressed by powers
+of $1/N$. For what follows it is convenient to introduce a dimensionless variable
+\beq
+\cs = \frac{ \sqrt{2}\sigma}{\Lambda}\,.
+\eeq
+Then the large-$N$ effective Lagrangian of the $\sigma$ field takes the form
+\marginpar{\tiny NEPRAVILNO?}
+\beq
+{\mathcal L}_{\rm eff} =\frac{N}{4\pi}
+\left\{
+\frac{1}{\,2\, |\cs|^2}\,\,
+ | \partial_\mu\cs \, |^2
++\Lambda^2
+\left[1 +|\cs |^2\left( \ln |\cs|^2 -1+u\right)\right]
+\right\}.
+\label{fdop3}
+\eeq
+
+On the other hand, 
+the Veneziano--Yankielowicz method \cite{VYan} produces 
+an effective Lagrangian in the Pickwick sense. It realizes, in a superpotential,  the  anomalous Ward identities of the 
+underlying theory
+and other symmetries, such as supersymmetry, and gives no information on the kinetic
+part. In the CP$(N-1)$ models
+the Veneziano--Yankielowicz superpotential ${\mathcal W}_{\rm VY} = \Sigma \ln \Sigma $ (for twisted superfields)
+was obtained in \cite{AdDVecSal,ChVa,W93}. 
+In terms of the scalar potential for the $\sigma$ field
+the Veneziano--Yankielowicz  construction has the form
+\beq
+V_{VY} = \frac{e^2_\sigma}{2} \left|\frac{N}{2\pi}
+\ln\frac{\sqrt{2}\, \sigma}{\Lambda}\right|^2
++\frac{N}{4\pi} u\,2|\sigma|^2\,.
+\label{fdop4}
+\eeq
+The kinetic term (that's where $e^2_\sigma$ comes from) was not determined; however, we can take
+it in the form obtained in the large-$N$ expansion, see (\ref{fdop1}),
+since it is scale invariant and, hence,  does not violate Ward identities.
+
+Combining 
+\beq
+e^2_\sigma =\frac{4\pi}{N}\,2|\sigma|^2
+\label{fdop5} 
+\eeq
+(see \cite{SYhet}) with (\ref{fdop4}) we arrive at
+\beqn
+{\mathcal L}_{VY} 
+&=&\frac{N}{4\pi}\,\frac{1}{2|\sigma|^2}\,| \,  \partial_\mu\sigma \,|^2+
+ \frac{N}{4\pi}
+\left\{ 2\cdot 2|\sigma|^2
+ \left|
+\ln\frac{\sqrt{2}\, \sigma}{\Lambda}\right|^2
++2|\sigma|^2\, u\right\}
+\nonumber\\[3mm]
+&=& \frac{N}{4\pi}
+\left\{
+\frac{1}{\,2\, |\cs|^2}\,\,
+ | \partial_\mu\cs \, |^2
+ +\Lambda^2
+ \left[2|\cs |^2\,\left|\ln \cs\right|^2 + |\cs|^2\,u
+ \right]
+ \right\}.
+ \label{fdop6}
+\eeqn
+It is obvious that the potential in (\ref{fdop3})
+is drastically different from that in (\ref{fdop6}). 
+For instance, (\ref{fdop3}) contains a single log, while (\ref{fdop6}) has the square of this logarithm.
+We will comment on the difference and the reasons for its appearence \cite{DADA}
+later. Now, let us have a closer look at the minima of
+(\ref{fdop3}) and (\ref{fdop6}). The variable $\cs$ is complex, and there iare $N$ solutions
+which differ by the phase,
+\beq
+\cs_* = \left|\cs_* \right|\exp\left(\frac{2\pi k}{N}\right)\,,\qquad k = 0,1, ..., N-1\,,
+\eeq
+$N$ equivalent vacua. This feature is obvious, and we will omit the phase setting $k=0$.
+Thus, we focus on a real solution.
+The minimum of (\ref{fdop3}) lies at
+ \beq
+ \cs_* = e^{-u/2}
+ \label{wdop1}
+ \eeq
+while the corresponding value of $V_{\rm eff}$ is
+\beq
+V_{\rm eff} (\cs_* ) = \frac{N}{4\pi}\,\Lambda^2 \left(1- e^{-u}
+\right)  .
+ \label{wdop2}
+\eeq
+At the same time, the minimum of (\ref{fdop6}) lies at
+\beq
+\cs_* = \exp\left(-\frac{1}{2} + \sqrt{\frac{1}{4}-\frac{u}{2}}\right) =  e^{-u/2}\left(1-\frac{u^2}{4} + ...
+\right)
+\label{wdop3}
+\eeq
+implying that 
+\beqn
+V_{\rm VY} (\cs_* )
+&=&  \frac{N}{4\pi}\,\Lambda^2 \,\left({1} - \sqrt{{1}-2 {u}} \right)\exp\left(-{1} + \sqrt{{1}-2 {u}}\right)
+\nonumber\\[3mm]
+& =&
+  \frac{N}{4\pi}\,\Lambda^2 \left(1- e^{-u}
+\right) \left(1-\frac{u^2}{6}  + ...
+\right) .
+\label{wdop4}
+\eeqn 
+The $\sigma$ masses are
+\beq
+m_\sigma^2 = \left\{
+\begin{array}{l}
+4\Lambda^2\,e^{-u}\,(1-u)\,,\\[2mm]
+4\Lambda^2\,e^{-u}\,(1-u)\,(1-u^2+...)\,,
+\end{array}
+\right.
+\label{wdop4}
+\eeq
+for (\ref{fdop3}) and (\ref{fdop6}) respectively.
+The positions of the minima, the $\sigma$ masses
+as well as the vacuum energy densities in these two cases
+differ by $O(u^2)$ in relative units. They coincide in the leading and next-to-leading orders in $u$, however.
+
+There are two questions to be discussed: (i) why the effective Lagrangians  (\ref{fdop3}) and (\ref{fdop6}),
+ being essentially different, predict identical vacuum parameters in the leading and next-to-leading order in $u$;
+ and (ii) why the  parameters extracted from the $1/N$ and Veneziano--Yankielowicz Lagrangians diverge 
+ from each other at $O(u^2)$ and  higher orders.
+
+The answer to the first question can be found in \cite{AdDVecSal}. While  the $1/N$ 
+Lagrangian is defined unambiguously, the Veneziano--Yankielowicz method determines only the
+superpotential part of the action. The kinetic part remains ambiguous. We got used to the fact that
+variations of the kinetic part affect only terms with derivatives, which are totally irrelevant for the
+potential part. This is not the case in supersymmtry.
+The correct statement is that variations of the kinetic part term, in addition to derivative terms,
+contains terms with $F\bar F$, which vanish in the vacuum ($F=0$) but alter the form of the potential outside
+the vacuum points (minima of the potential). The only requirement to the kinetic term is that
+it should obey all Ward identities (including anomalous) of the underlying microscopic theory.
+For instance, in the case at hand, the simplest choice $\ln\bar\Sigma\, \ln \Sigma $
+does the job. However, 
+$$
+\ln\bar\Sigma\, \ln \Sigma \left[1+ \frac{(\bar{D}^2 \ln\bar\Sigma)\, ({D}^2\ln \Sigma )}{\bar\Sigma\Sigma }
+\right]
+$$
+does the job as well. In this latter case there is an additional factor
+$$
+\left[1 +\bar FF/(\bar\sigma^2\sigma^2)   +...  \right] $$
+which reduces to 1 in the points where $F=0$ and changes the expression for $F$ (and, hence, the scalar potential)
+outside minima (i.e. at $F\neq 0$).
+
+The answer to the second question is even more evident.
+The Veneziano--Yankielowicz Lagrangian (\ref{fdop6}) reflects the Ward identites
+of the unperturbed CP$(N-1)$ model. That's the reason why the predictions following from this
+Lagrangian fail at the level $O(u^2)$, but are valid at the level $O(u)$. 
+We remind the reader that it was shown in \cite{SY1} that the vacuum energy density
+at the level $O(u)$ is determined by the bifermion condensate in the 
+conventional (unperturbed) CP$(N-1)$ model.
+
+One last remark is in order here.
+The kinetic term (\ref{fdop1}) is not canonic and singular at $\sigma=0$, implying that this point should be analyzed separately.
+One can readily cast (\ref{fdop1}) in the canonic form by a change of variables. Upon this transformation 
+$\sigma\to \tilde 
+\sigma =2 \ln\sqrt{2}\sigma/\Lambda$ (assuming for simplicity $\sigma$ to be real and positivde),
+the transformed potential (\ref{fdop2})    develops an extremum at 
+$\sigma = 0$ (i.e. $\tilde\sigma \to -\infty$). This extremum is maximum rather than minimum.
+Indeed, at $u=0$
+\beq
+\tilde{\mathcal L}_{\rm pot} = \frac{N\Lambda^2}{4\pi^2}\,(\tilde\sigma - 1)\,e^{\tilde\sigma}
++{\rm const}.
+\label{mdop7}
+\eeq
+It is curious to note that (\ref{mdop7}) exactly coincides with the (two-dimensional)
+dilaton effective Lagrangian derived in \cite{SMMS} on the basis of the most general
+(anomalous) scale Ward identities.
+
+\small
+\begin{thebibliography}{99}
+\itemsep -2pt
+
+\bibitem{AdDVecSal}
+  A.~D'Adda, A.~C.~Davis, P.~Di Vecchia and P.~Salomonson,
+  %``An Effective Action For The Supersymmetric Cp**(N-1) Model,''
+  Nucl.\ Phys.\  B {\bf 222}, 45 (1983).
+  %%CITATION = NUPHA,B222,45;%%
+  
+  \bibitem{SMMS}
+  A.~Migdal and M.~Shifman,
+  %``Dilaton Effective Lagrangian In Gluodynamics,''
+  Phys.\ Lett.\  B {\bf 114}, 445 (1982).
+  %%CITATION = PHLTA,B114,445;%%
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,290 @@
+\documentclass[epsfig,12pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\Tr{{\rm Tr}}
+\newcommand{\nfour}{${\cal N}=4\;$}
+\newcommand{\ntwo}{${\mathcal N}=2\,$}
+\newcommand{\none}{${\mathcal N}=1\,$}
+\newcommand{\ntt}{${\mathcal N}=(2,2)\,$}
+\newcommand{\nzt}{${\mathcal N}=(0,2)\,$}
+\newcommand{\tth}{${T^3}\,$}
+\newcommand{\ca}{{\mathcal A}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\cw}{{\mathcal W}}
+\newcommand{\cs}{{\mathcal S}}
+%\newcommand{\vp}{\varphi}
+%\newcommand{\pt}{\partial}
+%\newcommand{\ve}{\varepsilon}
+%\newcommand{\gs}{g^{2}}
+%\newcommand{\qt}{\tilde q}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%%%%%%%%%
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{color}
+\usepackage{showlabels}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Notes with regards to Sect. 8.3 SBY}
+
+{\bf Subsect. 8.3}
+
+\subsection{When the \boldmath{$n$} fields can be considered as solitons}
+\label{wtnfcb}
+
+Long ago Witten showed \cite{W79} that the $n$ fields in fact describe
+kinks interpolating between two neighboring vacua picked up from the set of $N$ degenerate 
+supersymmetric vacua
+of the \ntt sigma model. The above statement refers to the model with no twisted masses.
+(See Fig.~\ref{nkin}).
+Here we will discuss the physical status of these states, and the BPS spectrum at large,
+as the twisted mass parameter evolves towards large values, $|m|/\Lambda \gg1$.
+$N$ will be assumed to be large so that we can use the large-$N$ solutions.
+
+In the undeformed \ntt theory two distinct regimes are known to exist.
+\begin{figure}
+\epsfxsize=5cm
+%%\centerline{\epsfbox{nsigma22.eps}}
+%\centerline{\epsfbox{nkinks.eps}}
+\centerline{\resizebox{5cm}{!}{\input{nkinks_p.pstex_t}}}
+\caption{\small The kinks are represented by the $n$ fields at $|m_i|<\Lambda$. }
+\label{nkin}
+\end{figure}
+At large $m$
+the theory is in the Higgs regime, while at small $m$ it is in the
+strong coupling regime.
+There is no phase transition between the two regimes, since 
+the global $Z_N$ symmetry of the model is spontanepously broken in both.
+An apparent dsicontinuity of, say, the derivative of the vacuum expectation of $\sigma$ at
+$m=\Lambda$ (see Fig.~\ref{fig22nsigma}) is an artifact of the $N\to\infty$ limit.
+However, the BPS spectrum experiences a drastic change in passing from small to large $m$.
+In particular, 
+at $|m|<\Lambda$, the masses $M_i$ of the $n^i$ fields in the vacuum $|0\rangle$
+are
+\beq
+M_i^2 = 2\left| \Lambda - \frac{m_i}{\sqrt 2}\right|^2\,,\qquad i=0,1, ..., N-1\,.
+\label{nkma}
+\eeq
+This follows from Eq.~(\ref{bee31}). The mass degeneracy of the kink $N$-plet is gone
+since the twisted mass terms (\ref{two}) break the SU$(N)$ symmetry of the model leaving intact only
+U(1)$^{N-1}$ and \zn-symmetries.
+
+On the other hand, at large $m$, in the Higgs regime at weak coupling,  the $n$ fields no longer describe solitons;
+rather they represent elementary excitations. In each of the $N$ vacua
+there are $2(N-1)$
+real elementary excitations. Say, consider the vacuum in which $n^0$ develops a VEV.
+The phase of $n^0$ is eaten by the Higgs mechanism providing the mass to the photon field.
+The modulus of $n^0$ is excluded from dynamics by the constraint $\left|n^0\right|^2=2\beta$.
+The elementary excitations are described by $n^1,\,n^2,\, ... ,\, n^{N-1}$.
+The same equation~(\ref{bee31}) implies that the masses of these elementary excitations are\,\footnote{In fact, 
+equation $M_k= \left| m_0 - m_k\right|$ is exact.}
+(at large $N$)
+\beq
+M_k^2 = \left| m_0 - m_k\right|^2=
+\left(m\, \frac{2\pi k}{N}
+\right)^2
+\,,\qquad k=1, 2, ..., N-1\,.
+\label{nkmap}
+\eeq
+since the vacuum expectation of $\sigma$ in the vacuum under consideration is $\sigma\approx m_0\equiv m$.
+For the values of $k$ that do not scale with $N$, each such mass in (\ref{nkmap}) scales as $1/N$ at large $N$.
+This is the consequence of our $Z_N$-symmetric choice of the twisted mass parameters
+(\ref{two}). 
+
+%If $k\sim N$ then $M\sim m$.
+
+What about the kink masses in the Higgs regime? (For brevity we will refer to them as
+the weak-coupling regime (WCR) kinks, although this is not quite precise.
+Indeed, if $m$ is in the Higgs domain but $\sim {\rm a\,\, few}\times\Lambda$, the coupling constant is 
+of order 1.) The masses of the WCR
+kinks
+can be found from the Veneziano--Yankielowicz
+effective superpotential \cite{HaHo},
+which is exact in the model under consideration,
+\beq
+\cw_{\rm VY} 
+=
+ \frac{1}{4\pi}
+\,\sum_{i=0}^{N-1}\left(\sqrt{2}\,\sigma -m_i
+\right)\ln\frac{\sqrt{2}\,\sigma -m_i}{\Lambda}-\frac{N}{4\pi}\sqrt{2}\,\sigma\,.
+\label{widu}
+\eeq
+For definiteness $N$ is assumed to be even.
+%;
+%then Eq.~(\ref{widu}) can be rewritten in the equivalent form
+% \beq
+%\cw_{\rm VY} 
+%=
+% \frac{1}{4\pi}
+%\,\sum_{i=0}^{N-1}\left(\sqrt{2}\,\sigma + m_i
+%\right)\ln\frac{\sqrt{2}\,\sigma + m_i}{\Lambda}-\frac{N}{4\pi}\sqrt{2}\,\sigma\,.
+%\label{widum}
+%\eeq
+One should be careful with the logarithmic function. It is obvious that (\ref{widu})
+is defined up to $im_p/2$ times any integer number.
+For the kinks interpolating between the  vacua $|0\rangle$ and  $|p\rangle$  one has \cite{HaHo}
+\beq
+M_{\rm kink} 
+=
+ 2\left|\Delta \cw\right|= 2\left|\cw_{\rm VY} (\sigma_0) - \cw_{\rm VY} (\sigma_p)+\frac{i}{2}\left(m_0-m_p\right) q  \right|\,,
+   \label{widup}
+\eeq
+where the logarithmic function in (\ref{widu}) is defined with the cut along the negative semi-axis, and $q$ is an arbitrary integer.
+Since the vacuum values of sigma satisfy
+$$(\sqrt{2}\sigma)^N = m^N + \Lambda^N$$ and $|m/\Lambda| >1$, we 
+have $\sqrt{2}\sigma_p = m_p$, with the exponential accuracy.
+If  $\sigma_0=m_0=m$ and $|p|<N/4$, in calculating  $\cw_{\rm VY} (\sigma_0, \,\sigma_p)$
+we do not touch the cut of the logarithm, and then we can use the following expression\,\footnote{One might be tempted to use Eq.~(\ref{usefulformula}) here, but this does not work
+since in this expression we have a different argument of the logarithm.}
+\beqn
+\cw_{\rm VY}(\sigma)
+&=&
+  \frac{1}{4\pi}\,\sqrt{2}\sigma\,   \ln\left(\frac{\sqrt{2}\sigma}{e\Lambda}\right)^N
++\frac{1}{4\pi\,N }\,\sqrt{2}\sigma\,F_N(y)\,,
+\nonumber\\[3mm]
+F_N(y) 
+&\equiv&
+ \sum_{k=1}^\infty \,\,\frac{N}{k\, (kN-1)}\, y^k
+\nonumber\\[3mm]
+ y 
+&=& 
+\left(\frac{m}{\sqrt{2}\,\sigma}\right)^N\,.
+\label{chet1}
+\eeqn
+Note that $F_N$ is finite at $N\to \infty$ and $|y|\leq 1$. 
+As a result, at  $|p|<N/4$ we arrive at
+\beq
+M_{\rm kink} 
+=
+\frac{N\,m}{\pi}\,\sin\frac{\pi\, |p|}{N}\left|\ln\frac{m}{e\Lambda} +2\pi i\frac{q}{N}\,.
+\right|\,.
+\label{chet4}
+\eeq
+The lightest mass is obtained by setting $q=0$,
+\beq
+M_{{\rm kink}*} 
+=
+\frac{N\,m}{\pi}\,\sin\frac{\pi\, |p|}{N}\left|\ln\frac{m}{e\Lambda} 
+\right|
+\label{chet4w}
+\eeq
+At $p\sim N^0$ and
+$|m/\Lambda |\gg1$ the kink mass does not scale with $N$. In addition,  it is enhanced by 
+the large logarithm $\ln m/e\Lambda\sim (Ng^2)^{-1}$ compared to the masses of the elementary excitations.
+Each kink has a tower of excitations on top of it, corresponding to $q\neq 0$.
+The existence of excitations is due to the fact that
+in additition to  the topological charge, the kinks can  have U(1) charges \cite{Dor}. 
+Excitations decay on the curve of marginal stability (CMS) $|m| =e\Lambda$, see \cite{Olmez}.
+
+
+Now consider $|p|$ larger than $N/4$. Equation (\ref{chet1}) is no longer valid. Instead, in the
+limit $N=\infty$ we have ($\frac{1}{4}\leq x\leq \frac{3}{4}$)
+\beq
+\cw_{\rm VY}(\sigma_p=m_p)\to \frac{m_p}{4\pi}\,\ln\left(\frac{m}{e^{f_1(x)+i f_2(x)}\,\Lambda }\right)^N
+\label{chet2}
+\eeq
+where
+\beqn
+f_1 
+&=&
+ -\cos 4\pi\,x\,,\qquad f_2 = \left\{\begin{array}{l}
+4\pi\left(x-\frac{1}{4}\right) +\sin 4\pi\,x\,,\qquad \frac{1}{4}\leq x\leq \frac{1}{2}\,,\\[3mm]
+4\pi\left(x-\frac{3}{4}\right) +\sin 4\pi\,x\,,\qquad \frac{1}{2}\leq x\leq \frac{3}{4}
+\end{array}
+\right.
+\label{chet2w}
+\\[3mm]
+x
+&=& \frac{p}{N}\,.
+\label{chet2ww}
+\eeqn 
+For kinks interpolating between the  vacua $|0\rangle$ and  $|p\rangle$  with $\frac{N}{4}\leq p\leq \frac{3N}{4}$
+we thus get
+\beqn
+M_{\rm kink} 
+&=&
+\frac{N\,m}{\pi}\left(\sin \pi\,x\right)
+\nonumber\\[3mm]
+&\times&
+\left|
+\ln\frac{m}{\Lambda e^{(1+f_1)/2}} \, - f_2\,\cot \pi x -\frac{i}{2}\left[f_2 +(1-f_1)\cot\pi x
+\right]+2\pi i \frac{q}{N}
+\right|
+\nonumber\\
+\label{chet4ww}
+\eeqn
+In particular, the
+ ``most composite"  kink corresponding to $p=N/2$ and $x=1/2$.
+For such kinks 
+\beq
+M_{\rm kink} 
+=
+\frac{N\,m}{\pi}\,\left|\ln\frac{m}{\Lambda} +2\pi i\frac{\tilde q}{N}
+\right|\,.
+\label{chet3}
+\eeq
+The tower of excitations collapses at $|m| = \Lambda$. This is another CMS (to which the AD point belongs).
+Generally speaking, there are $N/2$ curves of marginal stability
+corresponding to distinct values of $p$ in the interval $(N/4, 3N/4)$
+and such values of $m$ for which the real part in the second line in (\ref{chet4ww}) vanishes.
+They are presented by co-axial circles in the $m^N$ plane with radii $r^N$
+where $r\in [1, e]$. There is a cut in the $m^N$ plane along the negative semi-axis \cite{Olmez}.
+At $|m|<\Lambda$ all excitations decay, and the kinks are represented by the $n$ fields.
+
+So far we ignored the heterotic deformation.
+Since the latter generally speaking breaks 
+supersymmetry (spontaneously), the analysis presented above is no longer valid.
+However, for small heterotic deformation, the overall picture is likely to
+stay intact as long as we are in the $Z_N$ broken phase. 
+We still have $N$ degenerate vacua (albeit they are at nonvanishing energy),
+and solitons of various kinds which interpolate between them.
+The BPS saturation-based consideration with regards to
+the soliton masses and  CMS is no longer applicable,
+and these masses and  curves will be distorted compared to the \ntwot case.
+These distortions should be small, however.
+
+
+\vspace{1cm}
+
+{\bf Probably, it makes sense to }
+
+1) check equations;
+
+2) $\tilde q$ seems to contain 1/4
+
+3) For each $p$ take such value of $q$ which minimizes the kink mass.
+Then plot $M_{\rm kink*}$ as a function of $x$
+for some value of $m/\Lambda$ and $N$. Say,
+$m/\Lambda = 4$ or 5.
+
+
+
+\small
+\begin{thebibliography}{99}
+\itemsep -2pt
+
+ \bibitem{Olmez}
+S.~Olmez and M.~Shifman,
+  %``Curves of Marginal Stability in Two-Dimensional CP(N-1) Models with
+  %Z_N-Symmetric Twisted Masses,''
+  J.\ Phys.\ A  {\bf 40}, 11151 (2007)
+  [arXiv:hep-th/0703149].
+  %%CITATION = JPAGB,A40,11151;%%
+
+  
+  
+\end{thebibliography}
+
+\end{document}

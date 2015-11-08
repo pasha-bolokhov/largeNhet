@@ -1,0 +1,636 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+\usepackage{showlabels}
+
+\textwidth = 6.0 in
+\textheight = 8.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.2 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+%\parskip = 0.05in
+\parindent = 0.35in
+
+
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+\newcommand{\nfour}{${\mathcal N}=4$ }
+\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+\newcommand{\none}{${\mathcal N}=1$ }
+\newcommand{\nonen}{${\mathcal N}=1$}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\qt}{\tilde q}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\bgamma}{\ov{\gamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bm}{{\bar m}}
+
+\newcommand{\nz}{{n^{(0)}}}
+\newcommand{\no}{{n^{(1)}}}
+\newcommand{\bnz}{{\ov{n}{}^{(0)}}}
+\newcommand{\bno}{{\ov{n}{}^{(1)}}}
+\newcommand{\Dz}{{D^{(0)}}}
+\newcommand{\Do}{{D^{(1)}}}
+\newcommand{\bDz}{{\ov{D}{}^{(0)}}}
+\newcommand{\bDo}{{\ov{D}{}^{(1)}}}
+\newcommand{\sigz}{{\sigma^{(0)}}}
+\newcommand{\sigo}{{\sigma^{(1)}}}
+\newcommand{\bsigz}{{\ov{\sigma}{}^{(0)}}}
+\newcommand{\bsigo}{{\ov{\sigma}{}^{(1)}}}
+
+\newcommand{\rrenz}{{r_\text{ren}^{(0)}}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	  		        S E C T I O N
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{1-loop Effective Action}
+
+We take the Lagrangian of the heterotic \CPC sigma model with twisted masses as
+\begin{align}
+\label{sigma_full}
+% 
+\notag
+ 	\mc{L}_\text{1+1} & ~~=~~
+	-\,\frac{1}{8e^2}\,F_{RL}^2  ~+~ \frac{1}{e^2} \left|\p_k \sigma\right|^2 
+	~+~ \frac{1}{2e^2}\, D^2
+	~+~ \frac{1}{e^2}\, \blar\, i\p_L\, \lar  ~+~  \frac{1}{e^2} \blal\, i\p_R\, \lal
+	\\[2mm]
+%
+\notag
+	&~
+	~+~ 
+	\left| \nabla n \right|^2  ~+~ 2 \Bigl| \sigma - \frac{m^l}{\sqrt 2} \Bigr|^2 \left| n^l \right|^2
+	~+~ iD \left( \left|n^l \right|^2 - r_0 \right)
+	\\
+%
+\notag
+	&~
+	~+~ \bxir\, i\nabla_L \xir  ~+~ \bxil\, i\nabla_R \xil ~+~
+	i\sqrt{2}\, \Bigl( \sigma - \frac{m^l}{\sqrt{2}} \Bigr) \ov{\xi}{}_{Rl} \xi_L^l
+	~+~ i\sqrt{2}\, \Bigl( \ov{\sigma} - \frac{\ov{m}{}^l}{\sqrt{2}} \Bigr) \ov{\xi}{}_{Ll} \xi_R^l
+	\\[2mm]
+%
+	&
+	~+~ i\sqrt{2}\, \ov{\xi_{[R}\, \lambda}{}_{L]}\, n
+	~-~ i\sqrt{2}\, \nbar\,  \lambda_{[R}\, \xi_{L]}
+	\\[4mm]
+%
+\notag
+	&~
+	~+~ \bzr\, i\p_L\, \zr   ~+~   \bff\, \ff
+	\\[4mm]
+%
+\notag
+	&~
+	~-~ 2i\, \omega \cdot \blal\, \zr
+	~-~ 2i\, \ov{\omega} \cdot \bzr\, \lal
+	~+~ 2i\, \omega \cdot \ff\, \sigma
+	~+~ 2i\, \ov{\omega} \cdot \bff\, \ov{\sigma}\,,
+	\\[3mm]
+%
+\notag
+	&~
+	l~=~1,...\,N\,.
+\end{align}
+	We have defined here
+\[
+	\omega ~~=~~ \sqrt{r_0}\,\delta\,, \qquad\qquad\qquad r_0 ~~=~~ 2\beta\,.
+\]
+
+	To build the low-energy effective action, we integrate over all but one $ n^l $ and $ \xi^l $.
+	We also ignore the gauge field $ A_\mu $.
+	Variables $ n^i $ and $ \xi^i $, $ i = 1,...\, N-1 $, enter the Lagrangian quadratically,
+\begin{align*}
+%
+	\mc{L} & ~~\supset~~ \nbar{}_i 
+		   \lgr -\, \p_k^2 ~+~ 2\,\Bigl| \sigma - \frac{m^i}{\sqrt{2}} \Bigr|^2 ~+~  i\, D \rgr n^i
+	\\
+%
+	&~ ~+~ \lgr \bxi_{Ri}~~~~~  \bxi_{Li} \rgr 
+		\lgr \begin{matrix}
+			i\,\p_L  &  
+			i\,\sqrt{2}\, \Bigl(\sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}}\Bigr) \\
+			i\,\sqrt{2}\,\Bigl(\ov{\sigma} - \frac{\displaystyle \ov{m}{}^i}{\displaystyle\sqrt{2}}\Bigr) &  
+			i\,\p_R 
+		     \end{matrix} \rgr
+		\lgr \begin{matrix}
+			\xi_R^i \\[5mm] \xi_L^i
+		     \end{matrix} \rgr.
+\end{align*}
+	Integrating over these variables produces the determinant
+\[
+	\prod_{i=1}^{N-1}
+	\frac{ \det \lgr -\,\p_k^2 ~+~ 
+			2\,\Bigl| \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2 \rgr }
+             { \det \lgr -\,\p_k^2 ~+~ 
+			2\,\Bigl| \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2 ~+~ i\, D \rgr } \,.
+\]
+	Evaluating this determinant at one loop, and denoting $ n^N \equiv n $, and its mass
+	$ m_0 \equiv m^N $, one arrives at the effective potential
+\begin{align}
+%
+\notag
+	V_\text{eff} & ~~=~~  \int d^2x 
+		\Biggl\lgroup  \lgr iD ~+~ 2\,\Bigl|\sigma - \frac{m_0}{\sqrt{2}}\Bigr|^2 \rgr |n|^2 
+	\\
+%
+\label{Veff}
+	&\qquad\qquad\quad
+	-~ 
+	\frac{1}{4\pi}\, \sum_{i=1}^{N-1} \Bigl( iD ~+~ 2\,\Bigl|\sigma - \frac{m^i}{\sqrt{2}}\Bigr|^2 \Bigr)\,
+		\ln\, \frac{ iD \,+\, 2 | \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} |^2} {\Lambda^2}
+	\\
+%
+\notag
+	&\qquad\qquad\quad
+	+~
+	\frac{1}{4\pi}\, \sum_{i=1}^{N-1} 2\,\Bigl|\sigma - \frac{m^i}{\sqrt{2}}\Bigr|^2\,
+			\ln\, \frac{ 2\, | \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} |^2 } { \Lambda^2 }
+	~+~ 
+	\frac{1}{4\pi}\, iD\, (N-1) 
+	\\[1mm]
+%
+\notag
+	&\qquad\qquad\quad
+	+~
+	4\, |\omega|^2\,\bigl|\sigma\bigr|^2 \Biggr\rgroup.
+\end{align}
+
+	Minimizing the potential \eqref{Veff} with respect to $n$, $D$ and $ \sigma $, one arrives at
+	the vacuum equations
+\begin{align}
+%
+\label{eff1}
+	&
+	|n|^2  ~~-~~  \frac{1}{4\pi} \sum_i^{N-1}\, 
+		{\rm log}\, 
+		\frac{i D ~+~ 2\, \Bigl| \sigma -  \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+							{\Lambda^2}   ~~=~~ 0 \\				
+%
+\label{eff2}
+	&
+	\lgr i D ~~+~~ 2\,\Bigl|\sigma - \frac{m_0}{\sqrt{2}}\Bigr|^2 \rgr n ~~=~~ 0 \\
+%
+\label{eff3}
+&
+	\Bigl(\sigma - \frac{m_0}{\sqrt{2}}\Bigr)|n|^2 
+		~-~ 
+	\frac{1}{4\pi} \sum_i^{N-1}\,
+			\Bigl(\sigma - \frac{m^i}{\sqrt{2}}\Bigr)\,
+		{\rm log}\, 
+		\frac{i D ~+~ 2\, \Bigl| \sigma \,-\, \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+		{2\, \Bigl| \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+		~+~ 2\, |\omega|^2\sigma ~~=~~ 0\,.
+\end{align}
+
+	Immediately we observe that Eq.~\eqref{eff2} implies two distinct cases,
+\begin{align}
+%
+\label{higgsph}
+& \bullet \qquad
+	 iD ~+~ 2\,\Bigl|\sigma - \frac{\displaystyle m_0}{\displaystyle \sqrt{2}}\Bigr|^2 ~~=~~ 0  
+	\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+\\[1mm]
+%
+\notag
+& \qquad \text{and} \\[2mm]
+%
+\label{strongph}
+& \bullet \qquad
+	 n ~~=~~ 0 \,. 
+\end{align}
+	These cases correspond to the Higgs and the strong-coupling phases of the theory. 
+	We solve these equations perturbatively, assuming $ |\omega|^2 $ a small parameter,
+\begin{align*}
+%
+	n & ~~=~~ \nz  ~~+~~ |\omega|^2\,\no ~~+~~ \ldots\,, \\[2mm]
+%
+	iD & ~~=~~ i\Dz  ~~+~~ |\omega|^2\,i\Do ~~+~~ \ldots\,, \\[2.3mm]
+%
+	\sigma & ~~=~~ \sigz ~~+~~ |\omega|^2\,\sigo ~~+~~ \ldots\,.
+\end{align*}
+	Here $ \nz $, $ \Dz $ and $\sigz$ constitute the solution of the \ntwot CP($N-1$) sigma model,
+	in particular $ \Dz = 0 $ in both phases.
+
+	To obtain simple expressions for the solution we will assume the masses to be sitting
+	on the circle,
+\[
+	m^k ~~=~~ m \cdot e^{i 2\pi k / N }\,, \qquad\qquad k ~=~ 0,...\, N-1\,.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	  		        S E C T I O N
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Higgs Phase}
+
+	The large-$N$ supersymmetric solution of the \ntwot CP($N-1$) sigma model
+	in the Higgs phase is
+\begin{align*}
+%
+	\nz & ~~=~~ \sqrt{\rrenz}\,,   \qquad\qquad\qquad\text{\it the phase of $\nz$ is not determined}\\[3mm]
+%
+	i\Dz & ~~=~~ ~~~\,0\,, \\[2mm]
+%
+	\sigz & ~~=~~ ~~\frac{m_0}{\sqrt{2}}\,,
+\end{align*}
+	where $ \rrenz $ is the renormalized coupling of the unperturbed theory,
+\[
+	\rrenz ~~=~~ \frac{N}{2\pi}\,{\rm log}\,m/\Lambda\,.
+\]
+
+	Expanding equations \eqref{eff1}-\eqref{eff3} to the first order in $|\omega|^2$, we obtain
+\begin{align}
+%
+\notag
+	&
+	\bnz\,\no ~+~ \text{h.c.} ~~=~~
+	\frac{1}{4\pi}\, \sum_{i}^{N-1}\, 
+		\frac{ i\Do ~+~ 2\lgr \bsigz\, \sigo ~-~ \bsigo\,\frac{\displaystyle m^i}{\displaystyle \sqrt{2}}
+				~+~ \text{h.c.} \rgr }
+			{ 2 \Bigl| \sigz - \frac{\displaystyle m^i}{\sqrt{\displaystyle 2}} \Bigr|^2 }\,, \\
+%
+\label{higgseq}
+	&
+	i\Do ~~=~~ 0\,, \\[2mm]
+%
+\notag
+	&
+	\sigo\,|\nz|^2  ~-~ 
+	\frac{1}{4\pi}\,i\Do\, \sum_{i}^{N-1}\, \frac{1}
+				{2\Bigl( \bsigz - \frac{\displaystyle \ov{m}{}^i}{\displaystyle \sqrt{2}} \Bigr) }
+	~+~ 2\,\sigz ~~=~~ 0\,.
+\end{align}
+	We can see that $ iD $ vanishes to the first order in $ |\omega|^2 $.
+	Thus, for $ iD $ the first order of expansion is not sufficient, since we know that supersymmetry
+	is broken and hence $ iD ~\neq~ 0 $.
+	This variable, however, is easy to recover in the Higgs phase given the corresponding expansion of $ \sigma $
+	via Eq.~\eqref{higgsph}.
+
+	The solution to equations \eqref{higgseq} can be written as
+\begin{align*}
+%
+	i \Dz & ~~=~~ 0\,,                     &       i\Do & ~~=~~ 0\,,  
+			\qquad\qquad iD^{(2)} ~~=~~ -\,2\,|\sigo|^2\,, \\[3mm]
+%
+	\sigz & ~~=~~ \frac{m_0}{\sqrt{2}}\,,  &       \sigo & ~~=~~ -\,\frac{2\sigz}{|\nz|^2}\,, \\[3mm]
+%
+	|\nz|^2 & ~~=~~ \rrenz\,,              &    
+			\no & ~~=~~ -\,\frac{2\,m^0}{\bnz\,|\nz|^2}\,\frac{1}{4\pi}\,
+					\sum_{i}^{N-1} \frac{1}{m^0 - m^i}\,.
+\end{align*}	
+
+	To simplify these expressions, as noted before, we put the masses on the circle, which gives then
+\[
+	\sum_{i=1}^{N-1} \frac{1}{m^0 - m^i} ~~=~~ \frac{N-1}{2m} ~~=~~ \frac{N}{2m} ~~+~~ O(1)\,.
+\]
+	Finally, we obtain 
+\begin{align*}
+%
+	\sigma & ~~=~~ \frac{m^0}{\sqrt{2}}\, \lgr 1 ~~-~~ \frac{2\,|\omega|^2}{|\nz|^2} \rgr ~~+~~ \ldots \,,
+	\\[2mm]
+%
+	i D & ~~=~~ -\, 4\, \frac{m_0^2}{(\rrenz)^2}\, |\omega|^4 ~~+~~ \ldots\,,
+	\\[2mm]
+%
+	n & ~~=~~ \sqrt{\rrenz} ~~-~~ \frac{N}{4\pi}\,\frac{1}{\rrenz\,\bnz}\,|\omega|^2 ~~+~~ \ldots
+\end{align*}
+	for the Higgs phase, where
+\[
+	\rrenz ~~=~~ \frac{N}{2\pi}\,{\rm log}\,m/\Lambda\,.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	  		        S E C T I O N
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Strong Coupled Phase}
+
+	The zeroth order in $ |\omega|^2 $ solution is 
+\begin{align*}
+%
+	\nz & ~~=~~ 0\,, \\[2mm]
+%
+	i \Dz & ~~=~~ 0\,, \\[1mm]
+%
+	\sigz & ~~=~~ \frac{\wt{\Lambda}}{\sqrt 2}\cdot e^{i\frac{2\pi l}{N}}\,,  
+	\qquad\qquad\qquad
+	\wt{\Lambda} ~~=~~ \sqrt[N]{ \Lambda^N ~+~ m^N }\,,
+\end{align*}
+	for some fixed $ l = 0,...\,N-1 $.
+	Furthermore, in this phase  $ n $ is known exactly,
+\[
+	n ~~=~~ 0\,.
+\]
+	The rest two equations in \eqref{eff1}-\eqref{eff3} give at the first order in $ |\omega|^2 $
+\begin{align*}
+%
+	&
+	\sum_{i}^{N-1}\, \frac{ i \Do ~+~ 2 \lgr \bsigz\,\sigo ~-~ 
+					\sigo\, \frac{\ov{\displaystyle m}{}^i}{\sqrt{\displaystyle 2}}
+				~+~ \text{h.c.} \rgr }
+			    { 2\, \Bigl| \sigz - \frac{\displaystyle m^i}{\sqrt{\displaystyle 2}} \Bigr|^2 }
+			~~=~~ 0\,,
+	\\[2mm]
+%
+	&
+	\frac{1}{4\pi}\, \sum_i^{N-1}\, \frac{i \Do}
+				    {2\,\Bigl( \bsigz - \frac{\displaystyle\ov{m}{}^i}{\displaystyle \sqrt{2}} \Bigr) }
+			~~=~~ 2\, \sigz\,.
+\end{align*}
+
+	The solution to these equations are given by
+\begin{align}
+%
+\notag
+	n & ~~=~~ 0 \,,  \qquad\qquad\qquad\qquad i \Dz ~~=~~ 0\,,
+	\\[3mm]
+%
+\label{strongeq}
+	i \Do & ~~=~~ 8\pi \cdot \frac{ 2\sigz } 
+			{\displaystyle \sum_{i}^{N-1} 
+				\frac{1}{ \bsigz - \ov{m}{}^i/\sqrt{2}} } \,,
+	\qquad\qquad\qquad i ~=~ 1,...\, N-1\,,
+	\\[-8mm]
+%
+\notag
+	\sigo & \cdot \sum_{i}^{N-1} \frac{1}
+			{ \sigz - \frac{\displaystyle m^i}{\displaystyle\sqrt{2}} }
+		~+~ \text{h.c.} ~~=~~
+	-\, 8\pi \cdot \sigz \cdot 
+	\frac{ \displaystyle \sum_{i}^{N-1} 
+			\frac{1}{ \Bigl| \sigz - \frac{\displaystyle m^i}{\displaystyle\sqrt{2}} \Bigr|^2 } }
+	  { \displaystyle \sum_{i}^{N-1} 
+				\frac{1}{ \bsigz - \frac{\displaystyle \ov{m}{}^i}
+							{\displaystyle \sqrt{2}} } }\,.
+\end{align}
+
+	We use the following relations to simplify the above solution in the case when the masses 
+	are distributed on a circle,
+\begin{align*}
+%
+	&
+	\sum_{k=0}^{N-1} \frac{1} { 1 \,-\, \alpha\,e^{\frac{2\pi i k}{N}} } ~~=~~
+		\frac{N}{1 ~-~ \alpha^N}\,,
+	\\
+%
+	&
+	\sum_{k=0}^{N-1} \frac{1} { (1 + \alpha^2) ~-~ 2\,\alpha \cos \frac{2 \pi k}{N} }
+		~~=~~
+	\frac{1} {1 \,-\, \alpha^2} 
+	\lgr \frac{2\,N}{ 1 \,-\, \alpha^N } ~-~ N \rgr .
+\end{align*}
+
+	This gives,
+\begin{align*}
+%
+	& 
+	\sum_{k=1}^{N-1} \frac{ 1 }
+		{ \sigz - \frac{\displaystyle m^k}{\displaystyle \sqrt{2}} } ~~=~~ 
+		 - \, \frac{ 1 }
+		{ \sigz - \frac{\displaystyle m}{\displaystyle \sqrt{2}} } ~+~
+		N\, \frac{\wt{\Lambda}{}^N}{\Lambda^N}\, \frac{1}{\sigz} \,,
+	\\
+%
+	&
+	\sum_{k=1}^{N-1} \frac{ 1 }
+                { \Bigl| \sigz - \frac{\displaystyle m^k}{\displaystyle \sqrt{2}} \Bigr|^2 } ~~=~~
+	-\, \frac{1}
+	{ \Bigl| \sigz - \frac{\displaystyle m}{\displaystyle \sqrt{2}} \Bigr|^2 } 
+	~+~
+	\frac{2\,N}{ \wt{\Lambda}{}^2 - m^2 } \cdot
+	\frac{ \wt{\Lambda}{}^N + m^N } { \Lambda^N }\,.
+\end{align*}
+
+	In fact we will only need the leading-N contribution from them above relations.
+	In particular, if we substitute these relations into Eq.~\eqref{strongeq} directly,
+	we will not have $ iD $ real.
+	The reason {\it perhaps} is that the $ \sigz $ solution is only valid up to $ O(1/N) $
+	contributions.
+	Therefore, we ignore the O(1) contributions versus O(N).
+\begin{align*}
+%
+	i \Do & ~~=~~ \frac{16\pi}{N}\, \frac{\Lambda^N}{\wt{\Lambda}{}^N}\, |\sigz|^2\,,
+	\\[3mm]
+%
+	| \sigo | & ~~=~~
+	-\, \sqrt{2}\,\frac{2\pi}{N}\, \frac{\Lambda^N}{\wt{\Lambda}{}^N}\,
+		\frac{ \wt{\Lambda}{}^3 } {\wt{\Lambda}{}^2 - m^2 }\,
+		\Bigl[ 1 ~+~ \frac{m^N}{\wt{\Lambda}{}^N} \Bigr] \cdot
+		\Bigl( \cos \bigl( \frac{2\pi l }{N} - \varphi \bigr) \Bigr)^{-1}\,,
+\end{align*}
+	where $ \varphi $ is the arbitrary phase of $ \sigo $.
+	We can choose this phase to be the same as that of $ \sigz $, 
+\[
+	\varphi ~~\equiv~~ \frac{2\pi l}{N}
+\]
+	for the cosine to disappear.
+	If we take the limit of small masses
+\[
+	\frac{m^N}{\Lambda^N} ~~\ll~~ 1\,,
+\]
+	and also note that
+\[
+	\wt{\Lambda} ~~=~~ \Lambda 
+\]
+	with exponential accuracy in $ 1/N $,
+	we can further simplify the result, and arrive at
+\begin{align*}
+%
+	n & ~~=~~ 0 
+	\\[3mm]
+%
+	i D &  ~~=~~ |\omega|^2 \cdot \frac{8\pi}{N}\cdot \Lambda^2 ~+~ \ldots \,, 
+	\qquad\qquad\qquad \text{for }\frac{m^N}{\Lambda^N} ~\ll~ 1\,,
+	\\[3mm]
+%
+	\sigma & ~~=~~ \frac{\Lambda}{\sqrt 2} \cdot e^{\frac{2\pi i l}{N}} 
+			~-~ |\omega|^2\, \sqrt{2}\, \frac{2\pi}{N}\, 
+				\frac{\Lambda^3}{\Lambda^2 - m^2}\, e^{\frac{2\pi i l}{N}}
+	\,.
+\end{align*}
+
+	Note that although $ |\omega|^2 $ grows as $ O(N) $ for large $N$, the coefficients of 
+	$|\omega|^2$-corrections are suppressed by the corresponding power of $ 1/N $ so that 
+	the corrections are neutral in $ N $.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                            B I B L I O G R A P H Y
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\small
+\begin{thebibliography}{99}
+\itemsep -2pt
+
+
+
+\bibitem{Edalati}
+  M.~Edalati and D.~Tong,
+  %``Heterotic vortex strings,''
+  JHEP {\bf 0705}, 005 (2007)
+  [arXiv:hep-th/0703045].
+  %%CITATION = JHEPA,0705,005;%%
+
+\bibitem{SYhet}
+  M.~Shifman and A.~Yung,
+  %``Heterotic Flux Tubes in N=2 SQCD with N=1 Preserving Deformations,''
+  Phys.\ Rev.\  D {\bf 77}, 125016 (2008)
+  [arXiv:0803.0158 [hep-th]].
+  %%CITATION = PHRVA,D77,125016;%%
+
+\bibitem{BSYhet}
+  P.~A.~Bolokhov, M.~Shifman and A.~Yung,
+  %``Description of the Heterotic String Solutions in U(N) SQCD,''
+  [arXiv:0901.4603 [hep-th]].
+  %%CITATION = ARXIV:0901.4603;%%
+  
+\bibitem{SVZw}
+  M.~Shifman, A.~Vainshtein and R.~Zwicky,
+  %``Central charge anomalies in 2D sigma models with twisted mass,''
+  J.\ Phys.\ A  {\bf 39}, 13005 (2006)
+  [arXiv:hep-th/0602004].
+  %%CITATION = JPAGB,A39,13005;%%
+
+
+\end{thebibliography}
+
+
+\end{document}

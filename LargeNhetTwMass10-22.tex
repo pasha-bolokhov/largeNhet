@@ -1,0 +1,2516 @@
+\documentclass[epsfig,12pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+
+%%%%%%%%%
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{showlabels}
+%%%%%%%%%%%%
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\Tr{{\rm Tr}}
+\newcommand{\nfour}{${\cal N}=4\;$}
+\newcommand{\ntwo}{${\mathcal N}=2\,$}
+\newcommand{\none}{${\mathcal N}=1\,$}
+\newcommand{\ntt}{${\mathcal N}=(2,2)\,$}
+\newcommand{\nzt}{${\mathcal N}=(0,2)\,$}
+\newcommand{\cpn}{CP$(N-1)\,$}
+\newcommand{\ca}{{\mathcal A}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\cw}{{\mathcal W}}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\zn}{$Z_N$}
+\newcommand{\cd}{${\mathcal D}$}
+\newcommand{\cde}{{\mathcal D}}
+\newcommand{\cf}{${\mathcal F}$}
+\newcommand{\cfe}{{\mathcal F}}
+
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%%%%%%%%%%%%
+%%%%%%%%%%%
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+%\newcommand{\gsim}{\lower.7ex\hbox{$\;\stackrel{\textstyle>}{\sim}\;$}}
+% \newcommand{\lsim}{\lower.7ex\hbox{$
+%\;\stackrel{\textstyle<}{\sim}\;$}}
+%\newcommand{\nfour}{${\mathcal N}=4$ }
+%\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+%\newcommand{\none}{${\mathcal N}=1$ }
+\newcommand{\nonen}{${\mathcal N}=1$}
+%\newcommand{\vp}{\varphi}
+%\newcommand{\pt}{\partial}
+%\newcommand{\ve}{\varepsilon}
+%\newcommand{\gs}{g^{2}}
+%\newcommand{\qt}{\tilde q}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\bgamma}{\ov{\gamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bm}{{\bar m}}
+
+\newcommand{\nz}{{n^{(0)}}}
+\newcommand{\no}{{n^{(1)}}}
+\newcommand{\bnz}{{\ov{n}{}^{(0)}}}
+\newcommand{\bno}{{\ov{n}{}^{(1)}}}
+\newcommand{\Dz}{{D^{(0)}}}
+\newcommand{\Do}{{D^{(1)}}}
+\newcommand{\bDz}{{\ov{D}{}^{(0)}}}
+\newcommand{\bDo}{{\ov{D}{}^{(1)}}}
+\newcommand{\sigz}{{\sigma^{(0)}}}
+\newcommand{\sigo}{{\sigma^{(1)}}}
+\newcommand{\bsigz}{{\ov{\sigma}{}^{(0)}}}
+\newcommand{\bsigo}{{\ov{\sigma}{}^{(1)}}}
+
+\newcommand{\rrenz}{{r_\text{ren}^{(0)}}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{titlepage}
+
+\begin{flushright}
+FTPI-MINN-09/??, UMN-TH-????/09\\
+October 22/DRAFT
+\end{flushright}
+
+\vspace{1cm}
+
+\begin{center}
+{  \Large \bf  Large-\boldmath{$N$} Solution of the Heterotic\\[2mm]
+ CP\boldmath{$(N-1)$} Model with Twisted Masses}
+\end{center}
+
+
+
+\vspace{1mm}
+
+\begin{center}
+
+ {\large
+ \bf   P. Bolokhov,  M.~Shifman$^{\,a}$ and \bf A.~Yung$^{\,\,a,b}$}
+\end {center}
+
+\begin{center}
+
+%\vspace{3mm}
+
+$^a${\it  William I. Fine Theoretical Physics Institute,
+University of Minnesota,
+Minneapolis, MN 55455, USA}\\
+%[1mm]
+$^{b}${\it Petersburg Nuclear Physics Institute, Gatchina, St. Petersburg
+188300, Russia
+}
+\end{center}
+
+
+\begin{center}
+{\large\bf Abstract}
+\end{center}
+We address a number of unanswered questions on the \nzt deformation of the \cpn model with
+twisted masses.  In particular, we
+complete the program of solving \cpn model with twisted masses in the large-$N$
+limit. In hep-th/0512153 nonsupersymmetric version of the model with the $Z_N$
+symmetric twisted masses was analyzed in the framework of Witten's method. In arXiv:0803.0698 
+this analysis was extended: we presented the 
+large-$N$ solution of the heterotic \nzt \cpn model with no twisted masses.
+Here we solve the heterotic \nzt \mbox{\cpn}  model with nonvanishing twisted
+masses. Dynamical scenarios at large and small $m$ are studied
+($m$ is the twisted mass scale).
+In a certain limiting case we discuss the mirror representation for the heterotic model.
+
+\vspace{2cm}
+
+
+
+
+\end{titlepage}
+
+\newpage
+
+%\tableofcontents
+
+\section{Introduction}
+\setcounter{equation}{0}
+
+Two-dimensional  CP$(N-1)$ models with twisted masses
+emerged as effective low-energy theories on
+the worldsheet of non-Abelian strings in a class of 
+four-dimensional \ntwo\, gauge theories with unequal (s)quark 
+masses~\cite{HT1,ABEKY,SYmon,HT2} (for reviews see  \cite{Trev}). 
+Deforming these models in various ways (i.e. breaking supersymmetry down to \none and to nothing)
+one arrives at nonsupersymmetric or heterotic \cpn models.\footnote{
+Strictly speaking, the full derivation of the
+heterotic \cpn model with twisted masses, valid for arbitrary values of
+the deformation parameters,  from the microscopic bulk theory, is still absent.
+However, at small values of the deformation parameters,
+such a derivation is quite straightforward.} These two-dimensional models are very 
+interesting on their own,
+since they exhibit nontrivial dynamics with or without phase transitions 
+as one varies the twisted mass scale.
+In this paper we will present the large-$N$ solution of the \nzt \mbox{\cpn}  model with twisted
+masses. As a warm up exercise we analyze this model in the limit of vanishing heterotic deformation,
+i.e. the \ntt \cpn model with twisted masses (at $N\to\infty$). Both solutions 
+that we report here are based on the method developed by Witten
+\cite{W79,W93} (see also \cite{dadvl}) and extended in \cite{SYhet} to include the heterotic deformation.
+For certain purposes we find it convenient to invoke the mirror
+representation \cite{MR1,MR2}. An \nzt \cpn$\times C$
+model on the string world sheet in the bulk theory deformed by $\mu\ca^2$
+was suggested by Edalati and Tong \cite{EdTo}.
+It was derived from the bulk theory in \cite{SY1} (see also \cite{BSY1,BSY2}).
+Finally, the heterotic \nzt  \cpn model with twisted masses was formulated in \cite{BSY3}.
+
+\section{Generalities}
+\setcounter{equation}{0}
+
+\ntt supersymmtric \cpn sigma model was originally constructed 
+\cite{orco}
+in terms of \none superfields. Somewhat later it was realized \cite{Bruno}
+that 
+\none supersymmetry is automatically elevated up to \ntwo
+provided the target manifold of the sigma model in question is K\"ahlerian (for reviews see \cite{rev1,rev2}).
+The Witten index \cite{WI} of the \cpn model is $N$, implying unbroken supersymmetry
+and $N$ degenerate vacua at zero energy density.
+The \cpn manifold is compact; therefore, superpotential is impossible.
+One can introduce mass terms, however, through the twisted masses \cite{twisted}.
+The model is asymptotically free \cite{BelPo}, a dynamical scale $\Lambda$ is generated through dimensional transmutation. If the scale of the twisted masses is much larger than $\Lambda$, the theory is at weak coupling.
+Otherwise it is at strong coupling. A priori, there are $N$ distinct twisted mass parameters.
+However, in the absence of the heterotic deformation one of them is unobservable
+(see below). In this case the model is characterized by the coupling constant $g^2$,
+the vacuum angle $\theta$ and the twisted mass parameters $m_1,\,m_2,\, ..., m_N$
+with the constraint
+\beq
+m_1 + m_2 + ... +m_N =0\,.
+\label{one}
+\eeq
+Introducing a heterotic deformation, generally speaking, we eliminate the above constraint.
+The twisted masses are arbitrary complex parameters. Of special interest 
+in some instances (for example, in studying possible phase transitions)
+is the $Z_N$ symmetric choice
+\beq
+m_k = m\exp\left(\frac{2\pi \,i\, k}{N}\right)\,,\qquad k = 0,1,2, ... ,N-1\,.
+\label{two}
+\eeq
+The set (\ref{two}) will be referred to as the $Z_N$-symmetric masses.
+Then the constraint
+(\ref{one}) is automatically satisfied. Without loss of generality $m$ can be assumed
+to be real and positive. 
+
+Where necessary, we mark the bare coupling constant by the subscript 0 and introduce
+the inverse parameter $\beta$ as follows:
+\beq
+\beta = \frac{1}{g_0^2}\,.
+\eeq
+At large $N$, in the 't Hooft limit,  the parameter $\beta$ scales as $N$.
+
+There are two equivalent languages commonly used in description of the \cpn model:
+the geometric language ascending to \cite{Bruno} (see also \cite{rev2}), and the
+so-called gauged formulation ascending to \cite{W79,W93}. Both have their convenient and less convenient sides.
+We will discuss both formulations although construction of the $1/N$ expansion is
+more convenient within the framework of the gauged formulation. At $|m|/\Lambda \to 0$
+the elementary fields of the
+gauged formulation (they form an  $N$-plet) are in one-to-one correspondence with the kinks in the geometric formulation.
+The multiplicity of kinks -- the fact they they enter in $N$-plets --
+can be readily established \cite{adam} using the mirror representation \cite{MR1}. We will discuss this in more detail
+later. 
+
+\section{The model}
+\setcounter{equation}{0}
+
+\subsection{Gauged formulation, no heterotic deformation}
+
+In this section we will briefly review the gauged formulation \cite{W79,W93} of
+the \mbox{\ntt} \cpn model with twisted masses
+\cite{twisted}, i.e. we set the heterotic deformation coupling
+$\gamma = 0$.
+This formulation is built on an $N$-plet of complex scalar fields $n^i$ where $i=1,2,...,N$.
+We impose the constraint
+\beq
+\bar n_i \,n^i = 2\beta \,.
+\eeq
+This leaves us with $2N-1$ real bosonic degrees of freedom. To eliminate one extra degree
+of freedom we impose a local U(1) invariance $n^i(x)\to e^{i\alpha(x)} n^i(x)$.
+To this end we introduce a gauge field $A_\mu$ which converts the partial derivative into the
+covariant one,
+\beq
+\partial_\mu\to \nabla_\mu \equiv \partial_\mu -i\,  A_\mu\,.
+\eeq
+The field $A_\mu$ is auxiliary; it enters in the Lagrangian without derivatives. The kinetic term of the
+$n$ fields is
+\beq
+\cell  = \left|\nabla_\mu n^i\right|^2\,.
+\eeq
+The superpartner to the field $n^i$ is an $N$-plet of complex two-component spinor fields $\xi^i$,
+\beq
+\xi^i =\left\{\begin{array}{l}
+\xi^i_R\\[2mm]
+\xi^i_L
+\end{array}
+\right.\,,
+\eeq
+subject to the constraint
+\beq
+\bar{n}_i\,\xi^i =0\,,\qquad \bar\xi_i\,n^i = 0\,.
+\label{npxi}
+\eeq
+Needless to say, the auxiliary field $A_\mu$ has a complex scalar superpartner $\sigma$ 
+and a two-component complex spinor superpartner $\lambda$; both enter without derivatives.
+The full \ntt-symmetric Lagrangian is\,\footnote{This is, obviously, the Euclidean version.}
+\beqn
+\cell &=& 
+\frac{1}{e_0^2}\left(\frac{1}{4} F_{\mu\nu}^2 +\left|\pt_\mu\sigma\right|^2 + \frac{1}{2}D^2
++\bar\lambda \, i\bar{\sigma}^\mu\pt_\mu\,\lambda
+\right) + i\,D\left(\bar{n}_i n^i -2\beta
+\right)
+\nonumber\\[3mm]
+&+&
+\left|\nabla_\mu n^i\right|^2+ \bar{\xi}_i\, i\bar{\sigma}^\mu\nabla_\mu\,\xi^i
++ 2\sum_i\left|\sigma-\frac{m_i}{\sqrt 2}\right|^2\, |n^i|^2
+\nonumber\\[3mm]
+&+&
+i\sqrt{2}\,\sum_i \left( \sigma -\frac{m_i}{\sqrt 2}\right)\bar\xi_{Ri}\, \xi^i_L +i\sqrt{2}\,\bar{n}_i
+\left(\lambda_R\xi^i_L - \lambda_L\xi^i_R
+\right)
+\nonumber\\
+&+&
+i\sqrt{2}\,\sum_i \left( \bar\sigma -\frac{\bar{m}_i}{\sqrt 2}\right)\bar\xi_{Li}\, \xi^i_R +i\sqrt{2}\,{n}^i
+\left(\lambda_L\bar\xi_{Ri} - \lambda_R\bar\xi_{Li}
+\right),
+\label{bee31}
+\eeqn
+where $m_i$ are twisted mass parameters, and the limit $e_0^2\to\infty$ is implied. 
+\marginpar{\tiny Znak poslednih chlenov v dvuh poslednih
+strochkah ne sovpapadet s Pashey!}
+Moreover,
+\beq
+\bar\sigma^\mu = \{1,\,i\sigma_3\}\,,
+\label{wtpi3}
+\eeq
+see Appendix A.
+
+It is clearly seen that the auxiliary field $\sigma$
+enters in (\ref{bee31}) only through the  combination
+\beq
+\sigma -\frac{m_i}{\sqrt 2}\,.
+\label{combi}
+\eeq
+By an appropriate shift of $\sigma$
+one can always redefine the twisted mass parameters in such a way that the constraint
+(\ref{one}) is satisfied.
+The U(1) gauge symmetry is built in. This symmetry eliminates one bosonic degree of freedom, leaving us with $2N-2$ dynamical bosonic degrees of freedom inherent to CP$(N-1)$ model.
+
+
+
+\subsection{Geometric formulation, \boldmath{$\tilde\gamma=0$} }
+
+Here we will  briefly review the \ntt supersymmetric \cpn models in the
+geometric formulation. 
+The target space is the $N-1$-dimensional K\"ahler manifold 
+parametrized by the fields $\phi^{i},\,\phi^{\dagger\,\bar j}$, $\,i,\bar j=1,\ldots,N-1$,
+which are the lowest components of the chiral and antichiral superfields 
+\beq
+\Phi^{i}(x^{\mu}+i\bar \theta \gamma^{\mu} \theta),\qquad \bar\Phi^{\bar j}(x^{\mu}-i\bar \theta \gamma^{\mu} \theta)\,,
+\label{wtpi4}
+\eeq
+where\,\footnote{In the Euclidean space $\bar\psi$ becomes an independent variable.}
+\beqn
+&&
+x^{\mu}=\{t,z\},\qquad \bar \theta=\theta^{\dagger}\gamma^{0},\qquad \bar \psi=\psi^{\dagger}\gamma^{0}
+\nonumber
+\\[2mm]
+&&\gamma^{0}=\gamma^t=\sigma_2\,,\qquad \gamma^{1}=\gamma^z = i\sigma_1\,,\qquad \gamma_{5} 
+\equiv\gamma^0\gamma^1 = \sigma_3\,.
+\label{wtpi5}
+\eeqn
+With no twisted mass the Lagrangian  is \cite{Bruno}
+(see also \cite{WessBagger})
+\begin{equation}
+\label{eq:kinetic}
+{\cell}_{m=0}= \int d^{4 }\theta K(\Phi, \bar\Phi)
+=G_{i\bar j} \left[\partial^\mu \bar\phi^{\,\bar j}\, \partial_\mu\phi^{i}
++i\bar \psi^{\bar j} \gamma^{\mu} \cde_{\mu}\psi^{i}\right]
+-\frac{1}{2}\,R_{i\bar jk\bar l}\,(\bar\psi^{\bar j}\psi^{i})(\bar\psi^{\bar l}\psi^{k}).
+\end{equation}
+\beq
+G_{i\bar j}=\frac{\partial^{2} K(\phi,\,\bar\phi)}{\partial \phi^{i}\partial \bar\phi^{\,\bar j}}
+\label{wtpi6}
+\eeq
+ is the K\"ahler metric,
+$R_{i\bar jk\bar l}$ is the Riemann tensor \cite{Helgason}, 
+\beq
+R_{i\bar{j} k\bar{m}} = - \frac{g_0^2}{2}\left(G_{i\bar{j}}G_{k\bar{m}} +
+G_{i\bar{m}}G_{k\bar{j}}
+\right)\,.
+\label{640}
+\eeq
+Moreover,
+$$ \cde_{\mu}\psi^{i}=
+\partial_{\mu}\psi^{i}+\Gamma^{i}_{kl}\partial_{\mu} \phi^{k}\psi^{l}
+$$
+is the covariant derivative.
+The Ricci tensor $R_{i\bar j}$ is proportional to the metric \cite{Helgason},
+\beq
+\label{eq:RG}
+R_{i\bar{j}} = \frac{g_{0}^2}{2}\,  N \, G_{i\bar{j}}\,.
+\eeq
+For the massless CP($N\!-\!1)$ model 
+a particular choice of the K\"ahler potential
+\begin{equation}
+\label{eq:kahler}
+K_{m=0}=\frac{2}{g_{0}^{2}}\ln\left(1+\sum_{i,\bar j=1}^{ N-1}\bar\Phi^{\,\bar j}\delta_{\bar j i}\Phi^{i}\right)
+\end{equation}
+corresponds to the round Fubini--Study metric.
+
+Let us  briefly remind how one can introduce the twisted mass parameters \cite{twisted, Dor}.
+The theory (\ref{eq:kinetic}) can be interpreted as an ${\mathcal N}=1$ theory of $d$ chiral superfields 
+in four dimensions.  The theory possesses $N-1$ distinct   U(1) isometries 
+parametrized by $t^{a}$, $a=1,\ldots,N-1$.
+The Killing vectors of the isometries can be expressed via derivatives of the Killing 
+potentials $D^{a}(\phi, \bar\phi)$,
+\begin{equation}
+\label{eq:KillD}
+\frac{{d}\phi^{i}}{{  d}\,t_{a}}=-iG^{i\bar j}\,\frac{\partial D^{a}}{\partial \bar\phi^{ \,\bar j}}
+\,,\qquad 
+\frac{{d}\bar\phi^{ \,\bar j}}{{  d}\,t_{a}}=iG^{i\bar j}\,\frac{\partial D^{a}}{\partial \phi^{i}}\,.
+\end{equation}
+This defines U(1) Killing potentials, up to additive constants.
+
+The $N -1$ isometries are
+ evident from the expression (\ref{eq:kahler}) for the K\"ahler potential, 
+\begin{equation}
+\label{eq:iso}
+\delta\phi^{i}=-i\delta t_{a} (T^{a})^{i}_{k}(\phi)^{k}\,,\qquad 
+\delta\bar\phi^{\,\bar j}=i\delta t_{a}(T^{a})^{\bar j}_{\bar l}\bar\phi^{\,\bar l}\,,
+\qquad a=1,\ldots, N-1\,,
+\end{equation}
+(together with the similar variation of fermionic fields),
+where the  generators $T^{a}$ have a simple diagonal form,
+\begin{equation}
+(T^{a})^{i}_{k}=\delta^{i}_{a}\delta^{a}_{k}\,, \qquad a=1,\ldots,N-1\,.
+\end{equation}
+ The explicit form of the Killing potentials $D^{a}$ in CP$(N\!-\!1)$ with the Fubini--Study metric is
+\beq
+\label{eq:KillF}
+D^{a}=\frac{2}{g_{0}^{2}}\,\frac{\bar\phi\, T^{a}\phi}{1+\bar\phi\,\phi}\,,
+\qquad a=1,\ldots,N-1\,.
+\eeq
+Here we use the matrix notation implying that $\phi$ is a column $\phi^{i}$ and 
+$\bar\phi$ is a row $\bar\phi^{ \bar j}$.
+
+The isometries allow us  to introduce an interaction with $N-1$ {\em external} 
+U(1) gauge 
+superfields $V_{a}$ by modifying, in a gauge invariant way,  the K\"ahler potential (\ref{eq:kahler}),
+\begin{equation}
+\label{eq:mkahler}
+K_{m=0}(\Phi, \bar\Phi)\to
+K_{m}(\Phi, \bar\Phi,V)\,.
+\end{equation}
+For CP$(N\!-\!1)$ this modification takes the form
+\begin{equation}
+\label{eq:mkahlerp}
+K_{m}=\frac{2}{g_{0}^{2}}\ln \left(1+\bar\Phi\,{\rm e}^{V_{a}T^{a}}\Phi\right)\,.
+\end{equation}
+In every gauge multiplet $V_{a}$ let us retain only the $A^{a}_{x}$ and $A^{a}_{y}$ 
+components of the gauge potentials taking them to be just constants,
+\beq
+V_{a}=-m_{a}\bar \theta(1+\gamma_{5})\theta -\bar m_{a}\bar \theta(1-\gamma_{5})\theta\,,
+\label{wtpi1}
+\end{equation}
+where we introduced complex masses  $m_{a}$ as linear combinations of 
+constant U(1) gauge potentials,
+\beqn
+m_{a}
+&=&
+A^{a}_{y}+iA^{a}_{x}\,,\qquad \bar m_{a}=m_{a}^{*}=A^{a}_{y}-iA^{a}_{x}\,,
+\nonumber\\[2mm]
+a 
+&=&
+ 1,2, ..., N-1\,.
+\label{wtpi2}
+\eeqn
+In spite  of the explicit $\theta$ dependence the introduction of masses does not 
+break ${\cal N}=2$ supersymmetry.  One way to see this is to notice that the mass parameters 
+can be viewed as the lowest components of the twisted chiral superfields
+$D_{2}\bar D_{1}V_{a}$.
+
+Now we can go back to two dimensions implying that there is no dependence
+on $x$ and $y$ in the chiral fields.  It gives us the Lagrangian with the twisted masses 
+included \cite{twisted, Dor}:
+\beqn
+\label{eq:mtwist}
+{\mathcal L}_{m}
+&=&
+ \int d^{4 }\theta \,K_{m}(\Phi, \bar\Phi,\,V)
+=G_{i\bar j}\, g_{MN}\left[ {\cde}^M \bar\phi^{\,\bar j}\, {\cde}^{N} \phi^{i}
++i\,\bar \psi^{\bar j} \gamma^{M}\,D^{N} \psi^{i}\right]
+\nonumber\\[3mm]
+&-&
+\frac{1}{2}\,R_{i\bar jk\bar l}\,(\bar\psi^{\bar j}\psi^{i})(\bar\psi^{\bar l}\psi^{k})\,,
+\eeqn
+where $G_{i\bar j} =\partial_{i}\partial_{\bar j}K_{m}|_{\theta=\bar\theta=0}$ is the K\"ahler metric 
+and summation over $M$ includes, besides $M=\mu=0,1$, also 
+$M=+,-$. 
+The  metric $g_{MN}$ and extra gamma-matrices are
+\begin{equation}
+\label{eq:metric}
+g_{MN}=\left(\begin{array}{crrr}1& 0& 0 & 0 \\0 & -1 & 0 & 0 \\[1mm]0 & 0 & 0 & -\frac 1 2 \\[1mm]0 & 0 & -\frac 1 2 & 0\end{array}\right),\qquad
+\gamma^{+}=-i(1+\gamma_{5})\,,\quad
+\gamma^{-}=i(1-\gamma_{5})\,.
+\end{equation}
+The gamma-matrices satisfy the following algebra:
+\beq
+\bar\Gamma^{M}\Gamma^{N}+\bar\Gamma^{N}\Gamma^{M}=2 g^{MN}\,,
+\eeq
+where the set $\bar\Gamma^{M}$ differs from $\Gamma^{M}$  by interchanging of
+the $+,-$ components, $\bar\Gamma^{\pm}=\Gamma^{\mp}$.
+The gauge covariant derivatives ${\cal D}^M$ are defined as
+\beqn
+&&
+{\mathcal D}^{\mu}\phi=\partial^{\mu}\phi\,,\qquad {\cal D}^{+}\phi=-\bar m_{a}T^{a}\phi\,,
+\qquad  {\cal D}^{-}\phi=m_{a}T^{a}\phi\,,
+\nonumber\\[1mm]
+&& {\cal D}^{\mu}\bar\phi
+=\partial^{\mu}\bar\phi\,,
+\quad ~{\cde}^{+}\bar\phi =\bar\phi\, T^{a}\bar m_{a}\,,
+\qquad  {\cde}^{-}\bar\phi =-\bar \phi\, T^{a} m_{a}\,,
+\nonumber\\
+\eeqn
+and similarly for ${\cal D}^{M}\psi$, while the general covariant derivatives $D^{M}\psi$ are
+\begin{equation}
+D^{M}\psi^{i}=
+{\cal D}^{M}\psi^{i}+\Gamma^{i}_{kl}\,{\cal D}^{M}\! \phi^{k}\,\psi^{l}\,.
+\end{equation}
+
+
+
+\subsection{Gauged formulation, switching on the heterotic deformation}
+\label{gfsothd}
+
+
+The general formulation of \ntwoo gauge theories in two dimensions was addressed by Witten in 
+\cite{W93}, see also \cite{Witten:2005px}.
+In order to deform the \cpn model breaking \ntt down to \mbox{\nzt}
+we must introduce a right-handed spinor field $\zeta_R$ whose  target space is $C$ 
+(with a bosonic superpartner \cf), which is coupled to other fields as follows
+\cite{EdTo,SY1}:
+\beqn
+\Delta\cell 
+&=&
+\bar\zeta_R\, i\pt_L\, \zeta_R   +\bar\cfe\,\cfe
+	\nonumber\\[2mm]
+&-&
+ 2i\, \omega \, \bar\lambda_L\, \zeta_R -  2i\, \bar{\omega} \, \bar\zeta_R\, \lambda_L +
+	 2i\, \omega \, \cfe\, \sigma +
+ 2i\, \bar{\omega} \, \bar\cfe\, \bar{\sigma}\,,
+ \label{deforte}
+\eeqn
+where we define
+\beq
+\omega = \sqrt{2\beta}\,\delta\,.
+\label{deffp}
+\eeq
+This term must be added to the \ntt Lagrangian (\ref{bee31}). 
+It is quite obvious that the dependence on (\ref{combi}) is gone. 
+The deformation term (\ref{deforte}) has a separate dependence on $\sigma$, not reducible to the
+combination (\ref{combi}). Therefore, for a generic choice, all $N$ twisted mass
+parameters $m_1,\,m_2,\, ..., m_N$ become observable, Eq. (\ref{one}) is no longer valid.
+
+\vspace{1mm}
+
+Eliminating \cf, $\bar\cfe$  and $\bar\lambda ,\,\lambda$ we get
+\beq
+\Delta\cell = 4\, |\omega |^2\,|\sigma |^2\,,
+\label{deffpp}
+\eeq
+while the constraints (\ref{npxi}) are replaced by
+\beqn
+\bar{n}_i\,\xi^i_L
+&= &
+0\,,\qquad \bar\xi_{Ri}\,n^i = 0\,,
+\nonumber\\[2mm]
+\bar{n}_i\,\xi^i_R
+&= &
+ -\sqrt{2}\,\omega\zeta_R\,,\qquad \bar\xi_{Ri}\,n^i =  -\sqrt{2}\,\bar\omega\bar\zeta_R\,.
+\label{npxip}
+\eeqn
+
+We still have to discuss how the parameter $\omega$ is related to other
+deformation parameters (which are equivalent to $\omega$), and their $N$ dependence.
+We want to single out appropriate powers of $N$ so that the large-$N$ limit will be smooth.
+The parameter $\delta$ in Eq.~(\ref{deforte}) is $N$-independent. Therefore, $\omega$ scales as
+$\sqrt N$.
+
+One can restore the original form of 
+the constraints (\ref{npxi})  by   shifting  the $ \xir $ fields, namely,
+\beq
+\xi_R'= \xir + \sqrt{2}\, \bar{\delta}\, n\, \bar\zeta_R\,, \qquad
+\bar\xi_R'= \bar\xi_R + \sqrt{2}\, {\delta}\, \bar{n}\, \zeta_R\,.
+\label{wtpi7}
+\eeq
+This obviously changes the normalization of the kinetic term for $ \zr $, which we can
+bring back to its canonic form by a rescaling $ \zr $,
+\beq
+	\zr  \to   ( 1 - |\gamma|^2 )\, \zr\,.
+	\label{wtpi8}
+\eeq
+As a result of these transformations,  the following Lagrangian emerges:
+\beqn
+\cell 
+&=&
+ \bzr\, i\pt_L\, \zr
+-\omega\, i\pt_L\nbar \xir\, \zr - \bar{\omega}\, \bxir i\p_L n\, \bzr
++ |\tilde\gamma|^2\, \bxil \xil\, \bzr \zr
+	\nonumber\\[3mm]
+	&-&
+ i\omega\, m^l\, \bar{n}_l \, \xi_L^l\, \zr 
+	+ i\omega\, \bar{m}^l\, \bar{\xi}_{Ll} n^l\, \bzr
+\nonumber\\[3mm]
+&+&
+2\beta \left\{\rule{0mm}{6mm}
+		| \pt_k n |^2  +\! (\nbar  \p_k n)^2 + \! \bxir i\p_L \xir +\! \bxil  i\p_R \xil
+	-\!  (\nbar  i\p_R n)  \bxil \xil - \! (\nbar  i\p_L n) \bxir \xir
+	\right.
+\nonumber\\[3mm]
+&+& (1-|\tilde\gamma|^2)\,\bxil\xir\,\bxir\xil - \bxir\xir\,\bxil\xil
+	\nonumber\\[5mm]
+&+&
+  \sum_l |m^l|^2 \left|n^l \right|^2 
+- i m^l\, \bar{\xi}_{Rl} \xi_L^l ~-~ i\bar{m}^l\, \bar{\xi}_{Ll} \xi_R^l
+\nonumber\\[3mm]
+&-&
+\left.
+ (1-|\tilde\gamma|^2)
+	\left(
+	 \left|\sum m^l |n^l|^2 \right|^2 
+		- i m^l\, |n^l|^2 (\bxir\xil) - i\bar{m}^l\, |n^l|^2(\bxil\xir)
+	\right) \right\}.
+	\label{sigma_phys}
+\eeqn
+The sums over $l$ above run from $l=1$ to $N$. If the masses are chosen \zn-symmetrically, see
+(\ref{two}), this Lagrangian is explicitly \zn-symmetric, see  Appendix~B.
+
+If all $m_l=0$,  the model (\ref{sigma_phys}) reduces to the \nzt \cpn model
+derived in \cite{SY1}, see (\ref{bee31}). 
+Later on we will examine
+other special choices for the  the mass terms. Here we will only note that
+with all $m_l \neq 0$ the masses of the boson and fermion excitations following from
+(\ref{sigma_phys}) split. Say, in the $l_0$-th vacuum
+\beqn
+M_{\rm ferm}^{(l)} 
+&=&
+ m^l - m^{l_0} + |\tilde\gamma|^2\,m^{l_0} \,,
+	\nonumber\\[2mm]
+	\left| M_{\rm bos}^{(l)} \right|
+	&=&
+	\sqrt{ \left| M^{(l)}_{\rm ferm} \right|^2 - |\tilde\gamma|^4\, \left| m^{l_0}\right|^2}
+	\,,
+	\nonumber\\[3mm]
+	l
+	&=&
+	 1,2, ..., N;\quad l\neq l_0\,.
+\eeqn
+
+
+	The model (\ref{sigma_phys}) still contains redundant fields.
+	In particular, there are $N$ bosonic fields $n^l$ and $N$ fermionic $\xi^l$,
+	whereas the number of physical degrees of 
+	freedom is $2\times(N-1)$. 
+	One can readily eliminate the redundant fields, say, $n^N$ and $\xi^N$,
+	by exploiting the constraints (\ref{npxi}). Then explicit \zn-symmetry will be lost, of course.
+	It will survive as an implicit symmetry.
+
+\subsection{Geometric formulation, \boldmath{$\tilde\gamma \neq 0$}} 
+\label{gftgnz}
+
+The parameter of the heterotic deformation in the geometric formulation will be denoted by
+$\tilde \gamma$ (the tilde appears here for historical reasons;
+perhaps, in the future it will be reasonable to omit it).
+
+To obtain the Lagrangian of the heterotically deformed model
+we act as follows \cite{BSY3}: we start from (\ref{eq:kinetic}), add the
+ right-handed spinor field $\zeta_R$, with the same kinetic term as in Sect.~\ref{gfsothd}, and
+ add the bifermion terms
+ \beq
+ \frac{\tilde\gamma \,g_0}{\sqrt 2}
+ \left[\zeta_RG_{i\bar j}\left(i\pt_L\bar\phi^{\,\bar j}
+ \right)\psi_R^i + \bar\zeta_R G_{i\bar j}\left(i\pt_L\phi^{i}
+ \right)\bar\psi_R^{\,\bar j} 
+ \right].
+ \eeq
+Next, we change the four-fermion terms exactly in the same way this was done in
+ \cite{SY1},
+ namely
+ \beqn
+&-&\frac{1}{2} \,R_{i\bar jk\bar l}\left[\left(\bar\psi^{\bar j}\psi^{i}\right)\left(\bar\psi^{\bar l}\psi^{k}\right)
+\left(\bar\psi^{\bar j}\psi^{i}\right)\left(\bar\psi^{\bar l}\psi^{k}\right)
+\right]
+\nonumber\\[3mm]
+&\to&
+- \frac{g_0^2}{2}\left( G_{i\bar j}\psi^{\dagger\, \bar j}_R\, \psi^{ i}_R\right)
+\left( G_{k\bar m}\psi^{\dagger\, \bar m}_L\, \psi^{ k}_L\right)+
+\frac{g_0^2}{2}\left(1-|\tilde\gamma|^2\right)
+\left( G_{i\bar j}\psi^{\dagger\, \bar j}_R\, \psi^{ i}_L\right)
+\left( G_{k\bar m}\psi^{\dagger\, \bar m}_L\, \psi^{ k}_R\right)\,,
+\nonumber
+\\[4mm]
+&-&
+ \frac{g_0^2}{2} \, |\tilde{\gamma} |^2 \,\left(\zeta_R^\dagger\, \zeta_R
+\right)\left(G_{i\bar j}\,  \psi_L^{\dagger\,\bar j}\psi_L^i\right),
+\eeqn
+ where the first line represents the last term in Eq.~(\ref{eq:kinetic}), and we used the identity~(\ref{640}).
+ If one of the twisted masses from the set  $\{m_1,\,m_2,\, ..., m_N\}$ vanishes (say, $m^N=0$),
+then this is the end of the story. The masses 
+$m_a$ in Eqs. (\ref{wtpi1}) and (\ref{wtpi2}) are $\{m_1,\,m_2,\, ..., m_{N-1}\}$.
+
+However, with more general twisted mass sets,
+for instance, for the \zn-symmetric masses (\ref{two}), 
+one arrives at a more contrived situation since 
+one should take into account an extra contribution.
+Occurrence of this contribution can be seen \cite{BSY3} in a relatively concise
+manner using the superfield formalism of \cite{SY1},
+\beq
+\Delta\cell \sim M\int  {\mathcal B}\,\,  d\bar\theta_L \, d\theta_R + {\rm H. c.}\,,
+\label{tftpi1}
+\eeq
+where
+${\mathcal B}$ is a (dimensionless) \nzt superfield\,\footnote{This means that ${\mathcal B}$
+is the superfield only with respect to the right-handed transformations.}
+\beq
+{\mathcal B} =\left\{\zeta_R\left(x^\mu + i\bar\theta\gamma^\mu\theta\right) +\sqrt{2} \theta_R {\mathcal F}
+\right\} \bar\theta_L\,.
+\label{tftpi2}
+\eeq
+ The parameter $M$ appearing in (\ref{tftpi1}) has dimension of mass; in fact, it is proportional to $m^N$.
+ 
+ As a result, the heterotically deformed \cpn Lagrangian with all $N$ twisted mass parameters included
+can be written in the following general form:
+ \beq
+ \cell = \cell_\zeta + \cell_{m=0} +\cell_m\,,
+ \label{tftpi3}
+ \eeq
+ where the notation is self-explanatory. The expression for $\cell_m$ is quite combersome.
+ We will not reproduce it here, referring the interested reader to \cite{BSY3}.
+ For convenience, we present here the first two terms,
+\beqn
+\cell_\zeta + \cell_{m=0} && 
+= 
+\zeta_R^\dagger \, i\partial_L \, \zeta_R  + 
+\left[\tilde\gamma\, \frac{g_0}{\sqrt 2} \, \zeta_R  \, G_{i\bar j}\,  \big( i\,\partial_{L}\phi^{\dagger\,\bar j} \big)\psi_R^i
++{\rm H.c.}\right]
+\nonumber
+\\[4mm]
+&&
+ -\frac{g_0^2}{2}\, |\tilde\gamma |^2 \,\left(\zeta_R^\dagger\, \zeta_R
+\right)\left(G_{i\bar j}\,  \psi_L^{\dagger\,\bar j}\psi_L^i\right)
+\nonumber
+\\[4mm]
+&&
++G_{i\bar j} \big[\partial_\mu \phi^{\dagger\,\bar j}\, \partial_\mu\phi^{i}
++i\bar \psi^{\bar j} \gamma^{\mu} D_{\mu}\psi^{i}\big]
+\nonumber
+\\[4mm]
+&&
+- \frac{g_0^2}{2}\left( G_{i\bar j}\psi^{\dagger\, \bar j}_R\, \psi^{ i}_R\right)
+\left( G_{k\bar m}\psi^{\dagger\, \bar m}_L\, \psi^{ k}_L\right)
+\nonumber
+\\[4mm]
+&&
++\frac{g_0^2}{2}\left(1-|\tilde\gamma|^2\right)
+\left( G_{i\bar j}\psi^{\dagger\, \bar j}_R\, \psi^{ i}_L\right)
+\left( G_{k\bar m}\psi^{\dagger\, \bar m}_L\, \psi^{ k}_R\right)\,,
+\label{cpn-1g}
+\eeqn
+where we used (\ref{640}). The above Lagrangian is \nzt-supersymmetric at the classical level.
+Supersymmetry is spontaneously broken by nonperturbative effects \cite{EdTo,SYhet}. 
+Inclusion of $\cell_m$ spontanesously breaks supersymmetry at the classical level \cite{BSY3}, see
+Eq.~(\ref{}).
+
+The relation between $\tilde\gamma$ and $\delta$
+is as follows \cite{BSY3}:
+\beq
+-i\,\tilde\gamma_M=\tilde\gamma_E = \sqrt{2} \frac{\delta_E}{\sqrt{1+ 2 |\delta |^2}},
+\label{tftpi4}
+\eeq
+implying that $\tilde \gamma$ does {\em not} scale with $N$ in the 't Hooft limit.
+
+
+
+
+\section{Large-\boldmath{$N$} solution
+of the \cpn model with twisted masses}
+\setcounter{equation}{0}
+
+
+
+
+
+
+In this section we present a large $N$ solution of \ntwot supersymmetric $CP(N-1)$ model 
+with twisted masses (\ref{bee31}). We consider a special case of mass deformation
+(\ref{two}) 
+preserving a $Z_N$
+symmetry of the model. 
+The \ntwot  model with zero twisted masses as well as nonsupersymmetric $CP(N-1)$ model
+were solved by Witten in the large-$N$ limit \cite{W79}.
+The same method was used in
+\cite{GSYphtr} to study nonsupersymmetric $CP(N-1)$ model with twisted mass. In this section we will generalize Witten's analysis 
+to solve the \ntwot theory with twisted masses. 
+
+First let us briefly review the physics of non-supersymmetric \cpn model reveled
+by large $N$ solution in \cite{GSYphtr}.
+In the limit of vanishing mass deformation, the
+$CP(N-1)$ model is known to be a strongly coupled asymptotically free
+field theory
+\cite{P75}. A dynamical scale $\Lambda$ is generated as a result of
+dimensional transmutation.
+However, at large $N$ it can be solved by virtue of $1/N$ expansion
+\cite{W79}.
+The solution found by Witten exhibits a composite photon,
+coupled to $N$ quanta $n$, each with charge $1/\sqrt N$ with respect
+to this photon. In two dimensions the corresponding potential is long-range.
+It causes linear confinement, so that only $n^*n$ pairs show up in the
+spectrum \cite{Coleman,W79}. This is the reason why we refer to this phase as
+``Coulomb/confining." In the Coulomb/confining phase the vacuum 
+is unique and the $Z_N$ symmetry is unbroken.
+
+On the other hand, if the mass deformation parameter is $m\gg
+\Lambda$,
+the model is at weak coupling, the field $n$ develops a vacuum
+expectation value (VEV),
+there are $N$ physically equivalent vacua, in each of which the
+$Z_N$ symmetry is spontaneously broken. We  refer to this regime
+as the
+Higgs phase.
+
+In Ref. \cite{GSY05}
+it was argued that non-supersymmetric twisted mass deformed $CP(N-1)$ model
+undergoes a phase transition when the value of the mass parameter is
+$\sim \Lambda$ to the Higgs phase with broken $Z_N$ symmetry.
+ In \cite{GSYphtr} this result was confirmed by large $N$ solution.
+The issue of two phases and phase transitions in related models
+was also addressed by Ferrari
+\cite{Ferrari,Ferrari2}.
+
+In \ntwot supersymmetric \cpn model we do not expect a phase transition with respect to 
+twisted mass to occur. Below in this section we confirm this expectation showing
+that $Z_N$ symmetry is  broken at all values of twisted mass. Still the theory has two 
+different regimes, the Higgs regime at large $m$ and the  strong-coupling one at small $m$.
+
+
+
+Since the action (\ref{bee31}) is quadratic in the fields $n^{i}$ and $\xi^i$
+we can integrate over these fields and then minimize the resulting
+effective action with respect to the  fields from the gauge multiplet. The large-$N$ limit ensures the corrections to the saddle point approximation to be  small. In fact,
+this procedure boils down to calculating a small set of one-loop graphs with the
+$n^{i}$ and $\xi^i$  fields propagating in loops.
+
+In the Higgs regime the field $n^{i_0}$ develop a VEV.
+One can always choose $i_0=0$ and denote $n^{i_0}\equiv n$. 
+The field $n$, along with $\sigma$, are
+our order parameters that distinguish between the
+strong coupling  and the Higgs regimes. These parameters show rather dramatic crossover behavior
+when we move from one regime to another.
+
+Therefore, we do not want
+to integrate over $n$ {\em a priory}. Instead,
+we will stick to the following strategy:  we integrate over $N-1$
+fields $n^{i}$ with $i \ne 0$.
+The resulting effective action is to be considered as
+a functional of $n$, $D$ and
+$\sigma$. To find the vacuum configuration, we will minimize the
+effective action with
+respect to $n$, $D$ and
+$\sigma$.
+
+
+Integration over $n^{i}$ and $\xi^i$ in (\ref{bee31})
+yields the following determinants:
+\beq
+ \frac{
+\prod_{i=1}^{N-1} {\rm det}\, \left(-\pt_{k}^2 
++|\sqrt{2}\sigma-m_i|^2\right)}{
+\prod_{i=1}^{N-1}{\rm det}\, \left(-\pt_{k}^2 +iD
++|\sqrt{2}\sigma-m_i|^2\right)},
+\label{det}
+\eeq
+where we dropped the gauge field $A_k$. The  determinant in the denominator here comes from the
+boson loops while the one in the numerator from fermion loops. Note, that the $n^{i}$ mass 
+ is given by $iD+|\sqrt{2}\sigma-m_i|^2$ while that of fermions $\xi^i$
+is $2|\sqrt{2}\sigma-m_i|^2$. If supersymmetry is unbroken (i.e.  $D=0$) these masses are equal,
+and the product of the determinants reduces to unity, as
+it should be.
+
+Calculation of the determinants in Eq.~(\ref{det}) 
+is straightforward. We easily get the following contribution to the
+effective action:
+\beqn
+&&\sum_{i=1}^{N-1}\frac{1}{4\pi}\left\{\left(iD
++|\sqrt{2}\sigma-m_i|^2\right)
+\left[\ln\, {\frac{M_{\rm uv}^2}{iD
++|\sqrt{2}\sigma-m_i|^2}}+1\right]
+\right.
+\nonumber\\
+&-&
+\left. 
+|\sqrt{2}\sigma-m_i|^2
+\left[\ln\, {\frac{M_{\rm uv}^2}{
+|\sqrt{2}\sigma-m_i|^2}}+1\right]
+\right\},
+\label{detr}
+\eeqn
+where quadratically divergent contributions from bosons and fermions do
+not depend on
+$D$ and $\sigma$ and cancel each other. Here $M_{\rm uv}$ is an ultraviolet (UV) cutoff.
+ The bare coupling constant
+ $2\beta_0$ in (\ref{bee31}) can be parametrized as
+\beq
+2\beta_0=\frac{N}{4\pi}\, \ln\, {\frac{M_{\rm uv}^2}{\Lambda^2}}\,.
+\eeq
+Substituting this expression in (\ref{bee31}) and adding 
+the one-loop correction
+(\ref{detr})
+we see that the term proportional to 
+$iD \ln\, {M_{\rm uv}^2}$ is canceled out, and the effective action is
+expressed in terms of the renormalized coupling constant,
+\beq
+\rule{0mm}{8mm}
+2\beta_{\rm ren}=\frac{1}{4\pi}\, 
+\sum_{i=1}^{N-1}\ln\, {\frac{iD +|\sqrt{2}\sigma-m_i|^2}{\Lambda^2}}\, .
+\label{coupling}
+\eeq
+
+\vspace{2mm}
+
+Assembling  all contributions together and dropping gauginos $\lambda$ we get the effective potential as 
+a function of $n$, $D$ and $\sigma$ fields  in
+the form
+\beqn
+	V_\text{eff} & =& \int d^2x 
+		\left\{  \left( iD ~+~ 2\,\Bigl|\sigma - \frac{m_0}{\sqrt{2}}\Bigr|^2 \right) |n|^2 \right.
+	\nonumber\\[4mm]
+	&-& 
+	\frac{1}{4\pi}\, \sum_{i=1}^{N-1} \Bigl( iD ~+~ 2\,\Bigl|\sigma - \frac{m_i}{\sqrt{2}}\Bigr|^2 \Bigr)\,
+		\ln\, \frac{ iD \,+\, 2 | \sigma - \frac{\displaystyle m_i}{\displaystyle \sqrt{2}} |^2} {\Lambda^2}
+\nonumber\\[4mm]
+	&+& 
+	\frac{1}{4\pi}\, \sum_{i=1}^{N-1} 2\,\Bigl|\sigma - \frac{m_i}{\sqrt{2}}\Bigr|^2\,
+			\ln\, \frac{ 2\, | \sigma - \frac{\displaystyle m_i}{\displaystyle \sqrt{2}} |^2 }
+ { \Lambda^2 }
+	+
+	\frac{1}{4\pi}\, iD\, (N-1)  \Biggr .
+	\nonumber\\
+	\label{Veff22}
+\eeqn
+Now, to find the vacua, we must minimize the 
+effective potential (\ref{Veff22}) with respect to $n$, $D$ and $ \sigma $. In this way we  arrive at
+the set of	the vacuum equations,
+\beqn
+\label{22eff1}
+	&&
+	|n|^2  = 2\beta_{\rm ren}\,, 
+\\[3mm]				
+	&&
+	\left( i D ~~+~~ 2\,\Bigl|\sigma - \frac{m_0}{\sqrt{2}}\Bigr|^2 \right) n = 0\,, 
+	\label{22eff2}
+	\\[3mm]
+	&&
+	\Bigl(\sigma - \frac{m_0}{\sqrt{2}}\Bigr)|n|^2 
+		-
+	\frac{1}{4\pi} \sum_i^{N-1}\,
+			\Bigl(\sigma - \frac{m^i}{\sqrt{2}}\Bigr)\,
+		{\rm ln}\, 
+		\frac{i D + 2\, \Bigl| \sigma \,-\, \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+		{2\, \Bigl| \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+		 ~~=~~ 0\,,
+\label{22eff3}
+\nonumber\\
+\eeqn
+where $2\beta_{\rm ren}$ is determined by Eq.~(\ref{coupling}).
+
+From Eq.~(\ref{22eff2}) it is obvious that there are two options, either
+\beq
+\label{higgsph22}
+	 iD + 2\,\left| \sigma - \frac{ m_0}{\sqrt{2}}\right|^2 = 0  
+\eeq
+or
+\beq
+\label{strongph22}
+	 n = 0 \,. 
+\eeq
+	These two distinct solutions correspond to the Higgs and the strong-coupling regimes of the theory. 
+	
+
+
+Equations (\ref{22eff1})-(\ref{22eff3}) represent our {\em master set} which
+determines the vacua of the theory. 
+
+\begin{center}
+{\bf Higgs regime}
+\end{center}
+
+
+
+Consider first the Higgs regime.
+For large $m$ we have
+\beq
+D=0,\qquad \sqrt{2}\sigma=m_0,\qquad |n|^2=2\beta_{\rm ren}.
+\label{higgsvac}
+\eeq
+The first condition here, $D=0$ means that the \ntwot supersymmetry is not broken and the vacuum
+energy is zero. Integrating over $n$'s and $\xi$'s we fixed $n^{0}\equiv n$. Clearly we can fix
+any other $n^{i_0}$. Then (\ref{higgsvac}) takes the form 
+\beq
+D=0,\qquad \sqrt{2}\sigma=m_{i_0},\qquad |n^{i_0}|^2=2\beta_{\rm ren}
+\label{higgsvacN}
+\eeq
+showing presence of $N$ degenerate vacua. The discrete chiral $Z_{2N}$ symmetry (\ref{bee35})
+is broken by these VEV's down to $Z_2$. Substituting expressions for $D$ and $\sigma$ in (\ref{coupling})
+we get for the renormalized coupling 
+\beq
+2\beta_{\rm ren}=\frac{1}{4\pi}\, 
+\sum_{i=1}^{N-1}\ln\, {\frac{|m_{i_0}-m_i|^2}{\Lambda^2}}=\frac{N}{2\pi}\,\ln\,{\frac{m}{\Lambda}}\, ,
+\label{22higgscoupling}
+\eeq
+where we have calculated the sum over $i$ in the large $N$ limit for the special choice of masses
+ in (\ref{two}).
+
+There are $2(N-1)$ elementary excitations\,\footnote{Here we count
+real degrees of
+freedom. The action (\ref{bee31}) contains $N$ complex fields
+$n^i$.
+The phase of $n^{i_0}$ can be eliminated from the very beginning.
+The condition $|n^i|^2 = 2\beta$ eliminates one more field.
+} with physical masses
+\beq
+M_i = |m_i-m_{i_0}|\,,\qquad i\neq i_0\,.
+\label{elmass}
+\eeq
+Besides, there are kinks (domain ``walls" which are particles in two
+dimensions) interpolating between these vacua. Their masses scale as
+\beq
+M^{\rm kink}_{i} \sim \beta_{\rm ren}\,M_i \,.
+\label{kinkmass}
+\eeq
+The kinks  are much  heavier than elementary
+excitations at weak coupling. Note that they have nothing to do
+with Witten's $n$ solitons \cite{W79} identified as solitons at
+strong coupling.
+
+Since $|n^{i_0}|^2=2\beta_{\rm ren}$ is positively defined we see that the crossover point is
+at $m=\Lambda$. Below this point VEV of $n$ is zero and we are in the strong coupling regime.
+
+\begin{center}
+{\bf Strong coupling regime}
+\end{center}
+
+For small $m$ 
+solutions of equations (\ref{22eff1})-(\ref{22eff3}) can be readily found,
+\beq
+D=0,\qquad n=0,\qquad
+2\beta_{\rm ren}=\frac{1}{4\pi}\, 
+\sum_{i=1}^{N-1}\ln\, {\frac{|\sqrt{2}\sigma-m_i|^2}{\Lambda^2}}=0.
+\label{strongvac}
+\eeq
+Much in the same way as in the Higgs regime, the condition $D=0$ means that the \ntwot
+ supersymmetry is not broken.
+
+The last equation can be rewritten as 
+\beq
+\prod_{i=0}^{N-1}\,|\sqrt{2}\sigma-m_i| \,=\,\Lambda^N
+\label{Witcond}
+\eeq
+Note, that although we derived this equation in the large $N$ approximation it is, in fact,
+exact. I follows from the  exact superpotential for \ntwot \cpn model \cite{AdDVecSal,ChVa,W93,HaHo,Dor}.
+
+For the special choice of masses
+ in (\ref{two}) equation (\ref{Witcond}) can be solved. Assuming for simplicity that $N=2^p$
+we rewrite this equation in the form
+\beq
+|(\sqrt{2}\sigma)^N-m^N|=\Lambda^N,
+\eeq
+which has $N$ solutions
+\beq
+\sqrt{2}\sigma =\left(\Lambda^N+m^N\right)^{1/N}\,
+\exp\left( \frac{2\pi\,i\, k}{N}
+\right), \quad k=0, ..., N-1,
+\label{22sigma}
+\eeq
+where we assumed for simplicity that $m\equiv m_0$ is real and positive.
+This solution shows the presence of $N$ degenerate vacua. Since $\sigma$ is nonzero in all these vacua
+the discrete chiral $Z_{2N}$ symmetry is broken down to $Z_2$ in the strong coupling regime much in the   same way as
+in the Higgs regime. This should be contrasted with large $N$ solution of the non-supersymmetric
+massive \cpn model \cite{GSYphtr}. In the latter model $\sigma=0$ in the strong coupling phase, so the theory
+has only one single vacuum state and $Z_{2N}$ symmetry is restored. This is a signal of a phase transition
+separating Higgs and Coulomb/confining phase in the non-supersymmetric massive \cpn model \cite{GSYphtr}.
+
+In fact, in the large $N$ approximation result in ({\ref{22sigma}) can be rewritten as
+\beq
+\sqrt{2}\sigma =\exp\left( \frac{2\pi\,i\, k}{N}
+\right)\left[
+\begin{array}{cc}
+\Lambda\;\;\;\;\;\;m <\Lambda\\
+\;\;m\;\;\;\;\;\; m > \Lambda
+\end{array},
+\right.
+ \quad k=0, ..., N-1
+\label{22sigmaapp}
+\eeq
+with the exponential accuracy with respect to $N$. Note that at large $m$ this formula reproduces our
+result (\ref{higgsvacN}) obtained in the Higgs regime. In the limit $m\to 0$ it gives Witten's
+result obtained in \cite{W79}
+
+\begin{figure}
+\epsfxsize=7cm
+\centerline{\epsfbox{nsigma22.eps}}
+\caption{\small Plots of $n$ and $\sigma$ VEV's (thick lines) vs. $m$. }
+\label{fig22nsigma}
+\end{figure}
+
+The behavior of VEV's $n$ and $\sigma$ as functions of $m$ are plotted in Fig.~\ref{fig22nsigma}.
+These plots suggest that we have  discontinuities in derivatives with respect to $m$ for both order
+parameters. This would signal phase transition, of course. We note, however, that exact formula
+(\ref{22sigma}) shows a smooth behavior of $\sigma$. Therefore we interpret the discontinuity in
+(\ref{22sigmaapp}) as an artifact of large $N$ approximation. The crossover transition between two
+regimes become more and more pronounced as we increase $N$ and turn into a phase transition in the
+limit $N\to\infty$. We stress again that $Z_{2N}$ symmetry is broken down to $Z_2$ in both regimes.
+
+There is one interesting special regime in Eq.~(\ref{Witcond}). If \footnote{Strictly speaking 
+the phase does not follow from (\ref{Witcond}). It is written down below using  the complex version of Eq.~(\ref{Witcond}), which follows from the exact superpotential for \ntwot \cpn model
+\cite{AdDVecSal,ChVa,W93,HaHo,Dor}.}
+\beq
+\prod_{i=0}^{N-1}\,(-m_i) \,=\,\Lambda^N
+\label{ADpoint}
+\eeq
+all $N$ vacua coalesce at  
+\beq
+\sigma=0.
+\label{ADsigma}
+\eeq
+At this point in the mass parameter space one of $N$ kinks interpolating between two
+"neighboring" vacua becomes massless. This point determines a non-trivial conformal regime in the
+theory. This is a two dimensional image of the four dimensional
+Argyres-Douglas point \cite{AD,APSW}.
+
+
+
+\section{Heterotic \cpn model at small deformations}
+\setcounter{equation}{0}
+
+
+
+To build construct an effective action allowing us to explore the vacuum structure of the
+model under consideration, we integrate over all but one given $ n^l $ filed (and its superpartner $ \xi^l $).
+One can alway choose this fixed (unintegrated) field to be the last one, $n^N$.
+To the leading order in $1/N$ we can (and will) ignore the gauge field $ A_\mu $.
+The fields $ n^i $ and $ \xi^i $  ($ i = 1,...\, N-1 $) enter the Lagrangian quadratically,
+\beqn
+\cell &=&
+ \nbar{}_i 
+		   \left( - \p_k^2 ~+~ 2\,\Bigl| \sigma - \frac{m^i}{\sqrt{2}} \Bigr|^2 +  i\, D \right) n^i
+		   + ...
+\nonumber\\[4mm]
+&+&
+\left( \bxi_{Ri}\,\,  \bxi_{Li} \right)
+		\left( \begin{matrix}
+			i\,\pt_L  &  
+			i\,\sqrt{2}\, \Bigl(\sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}}\Bigr) \\
+			i\,\sqrt{2}\,\Bigl(\ov{\sigma} - \frac{\displaystyle \ov{m}{}^i}{\displaystyle\sqrt{2}}\Bigr) &  
+			i\,\p_R 
+		     \end{matrix} \right)
+		\left( \begin{matrix}
+			\xi_R^i \\[5mm] \xi_L^i
+		     \end{matrix} \right)+ ... ,
+\eeqn
+where the ellipses denote terms which contain neither $n$ nor $\xi$ fields.
+Integrating over the $n$, $\xi$ fields produces the determinant
+\beq
+	\prod_{i=1}^{N-1}\,\, \,
+	\frac{ \det \left( -\pt_k^2 + 
+			2\,\Bigl| \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2 \right) }
+             { \det \left( -\p_k^2 + 
+			2\,\Bigl| \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2 + i\, D \right)} \,.
+\label{determ}
+\eeq
+Assuming $\sigma$ and $D$ to be constant background fields,
+introducing the notation
+\beq
+n^N \equiv n \,,\qquad m^N  \equiv  m_0\,,
+\label{nnotat}
+\eeq
+and  evaluating this determinant, 
+one arrives at the following effective potential:
+\beqn
+	V_\text{eff} & =& \int d^2x 
+		\left\{  \left( iD ~+~ 2\,\Bigl|\sigma - \frac{m_0}{\sqrt{2}}\Bigr|^2 \right) |n|^2 \right.
+	\nonumber\\[4mm]
+	&-& 
+	\frac{1}{4\pi}\, \sum_{i=1}^{N-1} \Bigl( iD ~+~ 2\,\Bigl|\sigma - \frac{m^i}{\sqrt{2}}\Bigr|^2 \Bigr)\,
+		\ln\, \frac{ iD \,+\, 2 | \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} |^2} {\Lambda^2}
+\nonumber\\[4mm]
+	&+&
+	\frac{1}{4\pi}\, \sum_{i=1}^{N-1} 2\,\Bigl|\sigma - \frac{m^i}{\sqrt{2}}\Bigr|^2\,
+			\ln\, \frac{ 2\, | \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} |^2 } { \Lambda^2 }
+	+
+	\frac{1}{4\pi}\, iD\, (N-1) 
++
+	4\, |\omega|^2\,\bigl|\sigma\bigr|^2 \Biggr .
+	\nonumber\\
+	\label{Veff}
+\eeqn
+Now, to find the vacua, we must minimize the 
+effective potential (\ref{Veff}) with respect to $n$, $D$ and $ \sigma $. In this way we one arrive at
+the set of	the vacuum equations,
+\beqn
+\label{eff1}
+	&&
+	|n|^2  -  \frac{1}{4\pi} \,\sum_i^{N-1}\, 
+		{\rm ln}\, 
+		\frac{i D + 2\, \Bigl| \sigma -  \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+							{\Lambda^2}   = 0\,, 
+\\[3mm]				
+	&&
+	\left( i D ~~+~~ 2\,\Bigl|\sigma - \frac{m_0}{\sqrt{2}}\Bigr|^2 \right) n = 0\,, 
+	\label{eff2}
+	\\[3mm]
+	&&
+	\Bigl(\sigma - \frac{m_0}{\sqrt{2}}\Bigr)|n|^2 
+		-
+	\frac{1}{4\pi} \sum_i^{N-1}\,
+			\Bigl(\sigma - \frac{m^i}{\sqrt{2}}\Bigr)\,
+		{\rm ln}\, 
+		\frac{i D + 2\, \Bigl| \sigma \,-\, \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+		{2\, \Bigl| \sigma - \frac{\displaystyle m^i}{\displaystyle \sqrt{2}} \Bigr|^2}
+		+ 2\, |\omega|^2\sigma ~~=~~ 0\,.
+\label{eff3}
+\nonumber\\
+\eeqn
+From Eq.~(\ref{eff2}) it is obvious that there are two options, either
+\beq
+\label{higgsph}
+	 iD + 2\,\left| \sigma - \frac{ m_0}{\sqrt{2}}\right|^2 = 0  
+\eeq
+or
+\beq
+\label{strongph}
+	 n = 0 \,. 
+\eeq
+	These two distinct solutions correspond to the Higgs and the strong-coupling regimes of the theory. 
+	
+As a first step, we solve these equations perturbatively, assuming $ |\omega|^2 $ to be a small parameter,
+\beqn
+	n &=& \nz  + |\omega|^2\,\no + \ldots\,,
+	\nonumber
+	 \\[3mm]
+	iD &=& i\Dz  + |\omega|^2\,i\Do + \ldots\,, 
+	\nonumber
+	\\[3mm]
+	\sigma &=& \sigz + |\omega|^2\,\sigo + \ldots\,.
+\eeqn
+	Here $ \nz $, $ \Dz $ and $\sigz$ constitute the solution of the \ntwot CP($N-1$) sigma model,
+	in particular $ \Dz = 0 $ in both phases.
+
+	To obtain simple expressions for the solution we will assume the masses to be sitting
+	on the circle,
+\[
+	m^k ~~=~~ m \cdot e^{i 2\pi k / N }\,, \qquad\qquad k ~=~ 0,...\, N-1\,.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	  		        subS E C T I O N
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Higgs regime}
+
+	The large-$N$ supersymmetric solution of the \ntwot CP($N-1$) sigma model
+	in the Higgs phase is
+\begin{align*}
+%
+	\nz & ~~=~~ \sqrt{\rrenz}\,,   \qquad\qquad\qquad\text{\it the phase of $\nz$ is not determined}\\[3mm]
+%
+	i\Dz & ~~=~~ ~~~\,0\,, \\[2mm]
+%
+	\sigz & ~~=~~ ~~\frac{m_0}{\sqrt{2}}\,,
+\end{align*}
+	where $ \rrenz $ is the renormalized coupling of the unperturbed theory,
+\[
+	\rrenz ~~=~~ \frac{N}{2\pi}\,{\rm log}\,m/\Lambda\,.
+\]
+
+Expanding Eqs. (\ref{eff1}) -- (\ref{eff3}) to the first order in $|\omega|^2$, we obtain
+\begin{align}
+%
+\notag
+	&
+	\bnz\,\no ~+~ \text{h.c.} ~~=~~
+	\frac{1}{4\pi}\, \sum_{i}^{N-1}\, 
+		\frac{ i\Do ~+~ 2\lgr \bsigz\, \sigo ~-~ \bsigo\,\frac{\displaystyle m^i}{\displaystyle \sqrt{2}}
+				~+~ \text{h.c.} \rgr }
+			{ 2 \Bigl| \sigz - \frac{\displaystyle m^i}{\sqrt{\displaystyle 2}} \Bigr|^2 }\,, \\
+%
+\label{higgseq}
+	&
+	i\Do ~~=~~ 0\,, \\[2mm]
+%
+\notag
+	&
+	\sigo\,|\nz|^2  ~-~ 
+	\frac{1}{4\pi}\,i\Do\, \sum_{i}^{N-1}\, \frac{1}
+				{2\Bigl( \bsigz - \frac{\displaystyle \ov{m}{}^i}{\displaystyle \sqrt{2}} \Bigr) }
+	~+~ 2\,\sigz ~~=~~ 0\,.
+\end{align}
+	We can see that $ iD $ vanishes to the first order in $ |\omega|^2 $.
+	Thus, for $ iD $ the first order of expansion is not sufficient, since we know that supersymmetry
+	is broken and hence $ iD ~\neq~ 0 $.
+	This variable, however, is easy to recover in the Higgs phase given the corresponding expansion of $ \sigma $
+	via Eq.~(\ref{higgsph}).
+
+	The solution of Eqs.~(\ref{higgseq}) can be written as
+\begin{align*}
+%
+	i \Dz & ~~=~~ 0\,,                     &       i\Do & ~~=~~ 0\,,  
+			\qquad\qquad iD^{(2)} ~~=~~ -\,2\,|\sigo|^2\,, \\[3mm]
+%
+	\sigz & ~~=~~ \frac{m_0}{\sqrt{2}}\,,  &       \sigo & ~~=~~ -\,\frac{2\sigz}{|\nz|^2}\,, \\[3mm]
+%
+	|\nz|^2 & ~~=~~ \rrenz\,,              &    
+			\no & ~~=~~ -\,\frac{2\,m^0}{\bnz\,|\nz|^2}\,\frac{1}{4\pi}\,
+					\sum_{i}^{N-1} \frac{1}{m^0 - m^i}\,.
+\end{align*}	
+
+	To simplify these expressions, as noted before, we put the masses on the circle, which gives then
+\[
+	\sum_{i=1}^{N-1} \frac{1}{m^0 - m^i} ~~=~~ \frac{N-1}{2m} ~~=~~ \frac{N}{2m} ~~+~~ O(1)\,.
+\]
+	Finally, we obtain 
+\begin{align*}
+%
+	\sigma & ~~=~~ \frac{m^0}{\sqrt{2}}\, \lgr 1 ~~-~~ \frac{2\,|\omega|^2}{|\nz|^2} \rgr ~~+~~ \ldots \,,
+	\\[2mm]
+%
+	i D & ~~=~~ -\, 4\, \frac{m_0^2}{(\rrenz)^2}\, |\omega|^4 ~~+~~ \ldots\,,
+	\\[2mm]
+%
+	n & ~~=~~ \sqrt{\rrenz} ~~-~~ \frac{N}{4\pi}\,\frac{1}{\rrenz\,\bnz}\,|\omega|^2 ~~+~~ \ldots
+\end{align*}
+	for the Higgs phase, where
+\[
+	\rrenz ~~=~~ \frac{N}{2\pi}\,{\rm log}\,m/\Lambda\,.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	  		        subS E C T I O N
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strong coupling}
+
+	The zeroth order in $ |\omega|^2 $ solution is 
+\begin{align*}
+%
+	\nz & ~~=~~ 0\,, \\[2mm]
+%
+	i \Dz & ~~=~~ 0\,, \\[2mm]
+%
+	\sigz & ~~=~~ \wt{\Lambda}\cdot e^{i\frac{2\pi l}{N}}\,,  
+	\qquad\qquad\qquad
+	\wt{\Lambda} ~~=~~ \sqrt[N]{ \Lambda^N ~+~ m^N }\,,
+\end{align*}
+	for some fixed $ l = 0,...\,N-1 $.
+	Furthermore, in this phase  $ n $ is known exactly,
+\[
+	n ~~=~~ 0\,.
+\]
+	The rest two equations in \eqref{eff1}-\eqref{eff3} give at the first order in $ |\omega|^2 $
+\begin{align*}
+%
+	&
+	\sum_{i}^{N-1}\, \frac{ i \Do ~+~ 2 \lgr \bsigz\,\sigo ~-~ 
+					\sigo\, \frac{\ov{\displaystyle m}{}^i}{\sqrt{\displaystyle 2}}
+				~+~ \text{h.c.} \rgr }
+			    { 2\, \Bigl| \sigz - \frac{\displaystyle m^i}{\sqrt{\displaystyle 2}} \Bigr|^2 }
+			~~=~~ 0\,,
+	\\[2mm]
+%
+	&
+	\frac{1}{4\pi}\, \sum_i^{N-1}\, \frac{i \Do}
+				    {2\,\Bigl( \bsigz - \frac{\displaystyle\ov{m}{}^i}{\displaystyle \sqrt{2}} \Bigr) }
+			~~=~~ 2\, \sigz\,.
+\end{align*}
+
+	The solution to these equations are given by
+\begin{align}
+%
+\notag
+	n & ~~=~~ 0 \,,  \qquad\qquad\qquad\qquad i \Dz ~~=~~ 0\,,
+	\\[3mm]
+%
+\label{strongeq}
+	i \Do & ~~=~~ 8\pi \cdot \frac{ 2\sigz } 
+			{\displaystyle \sum_{i}^{N-1} 
+				\frac{1}{ \bsigz - \ov{m}{}^i/\sqrt{2}} } \,,
+	\qquad\qquad\qquad i ~=~ 1,...\, N-1\,,
+	\\[-8mm]
+%
+\notag
+	\sigo & \cdot \sum_{i}^{N-1} \frac{1}
+			{ \sigz - \frac{\displaystyle m^i}{\displaystyle\sqrt{2}} }
+		~+~ \text{h.c.} ~~=~~
+	-\, 8\pi \cdot \sigz \cdot 
+	\frac{ \displaystyle \sum_{i}^{N-1} 
+			\frac{1}{ \Bigl| \sigz - \frac{\displaystyle m^i}{\displaystyle\sqrt{2}} \Bigr|^2 } }
+	  { \displaystyle \sum_{i}^{N-1} 
+				\frac{1}{ \bsigz - \frac{\displaystyle \ov{m}{}^i}
+							{\displaystyle \sqrt{2}} } }\,.
+\end{align}
+
+	We use the following relations to simplify the above solution in the case when the masses 
+	are distributed on a circle,
+\begin{align*}
+%
+	&
+	\sum_{k=0}^{N-1} \frac{1} { 1 \,-\, \alpha\,e^{\frac{2\pi i k}{N}} } ~~=~~
+		\frac{N}{1 ~-~ \alpha^N}\,,
+	\\
+%
+	&
+	\sum_{k=0}^{N-1} \frac{1} { (1 + \alpha^2) ~-~ 2\,\alpha \cos \frac{2 \pi k}{N} }
+		~~=~~
+	\frac{1} {1 \,-\, \alpha^2} 
+	\lgr \frac{2\,N}{ 1 \,-\, \alpha^N } ~-~ N \rgr .
+\end{align*}
+
+	This gives,
+\begin{align*}
+%
+	& 
+	\sum_{k=1}^{N-1} \frac{ 1 }
+		{ \sigz - \frac{\displaystyle m^k}{\displaystyle \sqrt{2}} } ~~=~~ 
+		 - \, \frac{ 1 }
+		{ \sigz - \frac{\displaystyle m}{\displaystyle \sqrt{2}} } ~+~
+		N\, \frac{\wt{\Lambda}{}^N}{\Lambda^N}\, \frac{1}{\sigz} \,,
+	\\
+%
+	&
+	\sum_{k=1}^{N-1} \frac{ 1 }
+                { \Bigl| \sigz - \frac{\displaystyle m^k}{\displaystyle \sqrt{2}} \Bigr|^2 } ~~=~~
+	-\, \frac{1}
+	{ \Bigl| \sigz - \frac{\displaystyle m}{\displaystyle \sqrt{2}} \Bigr|^2 } 
+	~+~
+	\frac{2\,N}{ \wt{\Lambda}{}^2 - m^2 } \cdot
+	\frac{ \wt{\Lambda}{}^N + m^N } { \Lambda^N }\,.
+\end{align*}
+
+	In fact we will only need the leading-N contribution from them above relations.
+	In particular, if we substitute these relations into Eq.~\eqref{strongeq} directly,
+	we will not have $ iD $ real.
+	The reason {\it perhaps} is that the $ \sigz $ solution is only valid up to $ O(1/N) $
+	contributions.
+	Therefore, we ignore the O(1) contributions versus O(N).
+\begin{align*}
+%
+	i \Do & ~~=~~ \frac{16\pi}{N}\, \frac{\Lambda^N}{\wt{\Lambda}{}^N}\, |\sigz|^2\,,
+	\\[3mm]
+%
+	| \sigo | & ~~=~~
+	-\, \frac{8\pi}{N}\, \frac{\Lambda^N}{\wt{\Lambda}{}^N}\,
+		\frac{ \wt{\Lambda}{}^3 } {\wt{\Lambda}{}^2 - m^2 }\,
+		\Bigl[ 1 ~+~ \frac{m^N}{\wt{\Lambda}{}^N} \Bigr] \cdot
+		\Bigl( \cos \bigl( \frac{2\pi l }{N} - \varphi \bigr) \Bigr)^{-1}\,,
+\end{align*}
+	where $ \varphi $ is the arbitrary phase of $ \sigo $.
+	We can choose this phase to be the same as that of $ \sigz $, 
+\[
+	\varphi ~~\equiv~~ \frac{2\pi l}{N}
+\]
+	for the cosine to disappear.
+	If we take the limit of small masses
+\[
+	\frac{m^N}{\Lambda^N} ~~\ll~~ 1\,,
+\]
+	and also note that
+\[
+	\wt{\Lambda} ~~=~~ \Lambda 
+\]
+	with exponential accuracy in $ 1/N $,
+	we can further simplify the result, and arrive at
+\begin{align*}
+%
+	n & ~~=~~ 0 
+	\\[3mm]
+%
+	i D &  ~~=~~ u\, \Lambda^2 ~+~ \ldots \,, 
+	\qquad\qquad\qquad \text{for }\frac{m^N}{\Lambda^N} ~\ll~ 1\,,
+	\\[3mm]
+%
+	\sqrt{2}\sigma & ~~=~~ \Lambda \cdot e^{\frac{2\pi i l}{N}} \left[1
+			~-~ \frac{u}{2}\, 
+				\frac{\Lambda^2}{\Lambda^2 - m^2}\,\right]
+	\,.
+\end{align*}
+
+where
+\beq
+u\equiv \frac{8\pi}{N}\,|\omega|^2
+\label{u}
+\eeq	
+Note that although $ |\omega|^2 $ grows as $ O(N) $ for large $N$, the coefficients of 
+	$|\omega|^2$-corrections are suppressed by the corresponding power of $ 1/N $ so that 
+	the corrections are neutral in $ N $.
+
+
+\newpage
+
+
+\section{ Heterotic \cpn model at large  deformations}
+\setcounter{equation}{0}
+
+
+
+Now we study equations (\ref{eff1})-(\ref{eff3}) in the limit of large values of 
+deformation parameter $u\gg 1$. We will see that our theory has three different phases 
+separated by two phase transitions:
+\begin{itemize}
+ \item Strong coupling phase  with broken $Z_N$
+symmetry at small $m$
+\item  Coulomb/confining $Z_N$-symmetric
+phase at intermediate $m$ ( coupling  is also strong in this phase) 
+\item Higgs phase
+at large $m$, where $Z_N$ symmetry is again broken
+\end{itemize}
+ We assume that masses are distributed on a circle,
+see (\ref{two}).
+
+\begin{center}
+{\bf Strong coupling phase with broken $Z_N$}
+\end{center}
+
+This phase occurs at very small masses,
+\beq
+m\le \Lambda\,e^{-u/2}
+\label{scphmass}
+\eeq
+In this phase we have 
+\beq
+|n|=0,\qquad 2\beta_{\rm ren}=\frac{1}{4\pi}\, 
+\sum_{i=1}^{N-1}\ln\, {\frac{iD +|\sqrt{2}\sigma-m_i|^2}{\Lambda^2}} =0.
+\label{scphn}
+\eeq
+As we will see below $\sigma$ is exponentially small in this phase. Masses are also
+small. Then the second equation here gives
+\beq
+iD\approx \Lambda^2.
+\label{scphD}
+\eeq
+
+With this value of $iD$ equation (\ref{eff3}) can be written as
+\beq
+ \sum_{i=1}^{N-1}\left(\sqrt{2}\sigma-m_i\right)\ln\, {\frac{\Lambda^2}{|\sqrt{2}\sigma-m_i|^2}}
+=N\left(\sqrt{2}\sigma\right)u
+\label{scpheq3}
+\eeq
+
+To solve this equation we use the following trick. The "potential of a charged circle" 
+of radius $m$ in 
+two dimensions with the center at the origin calculated at the point in the two dimensional plane, represented by a complex  variable  $x$ reads
+\beq
+\frac{1}{N}\sum_{i=0}^{N-1}\ln\, {|x-m_i|^2}
+=\left[
+\begin{array}{cc}
+\ln\,{|x|^2},\;\;\;\;\; |x|>m\\
+\ln\,{m^2},\;\;\;\;\;\; |x|<m
+\end{array}
+\right.
+\label{chargedcircle}
+\eeq
+in the large $N$-limit. Integrating this formula with respect to $x$ we find
+\beq
+ \frac{1}{N}\sum_{i=0}^{N-1}\left(\sqrt{2}\sigma-m_i\right)\ln\, {\frac{\Lambda^2}{|\sqrt{2}\sigma-m_i|^2}}
+=\left[
+\begin{array}{cc}
+\sqrt{2}\sigma\,\ln\, {\frac{\Lambda^2}{|\sqrt{2}\sigma|^2}},\;\;\;\;\;\;\; |\sqrt{2}\sigma|>m\\
+\sqrt{2}\sigma\,\left(\ln\, {\frac{\Lambda^2}{m^2}}-1\right),\;\;\;\;\;\; |\sqrt{2}\sigma|<m
+\end{array}
+\right.
+\label{usefulformula}
+\eeq
+
+Substituting this equation in (\ref{scpheq3}) at small $m$, $m<|\sqrt{2}\sigma|$ we get
+\beq
+\sqrt{2}\langle \sigma\rangle=e^{\frac{2\pi i}{N}k}\;\Lambda\,e^{-u/2},\qquad k=0,...,(N-1).
+\label{scphsigma}
+\eeq
+The vacuum value of $\sigma$ is exponentially small at large $u$. The bound $m<|\sqrt{2}\sigma|$
+translates into the condition (\ref{scphmass}) for  $m$. 
+
+We see that we have $N$ degenerate vacua in this phase. The  chiral $Z_{2N}$ symmetry is broken
+down to $Z_2$, the order parameter is $\langle \sigma\rangle$. Moreover, the absolute value of $\sigma$ in these vacua does not depend on $m$.
+In fact this solution coincides with the one obtained in \cite{SYhet} for $m=0$. This phase
+is quite similar to the strong coupling phase of \ntwot \cpn model, see (\ref{22sigmaapp}).
+The difference is that the absolute value of $\sigma$ depends now on $u$ and becomes exponentially
+small in the limit $u\gg 1$.
+
+
+\begin{center}
+{\bf Coulomb/confining phase}
+\end{center}
+
+Now we increase $m$ beyond the bound (\ref{scphmass}). From (\ref{usefulformula}) we see that the 
+exponentially small solution to Eq.~(\ref{scpheq3}) no longer exist. The only solution is
+\beq
+\langle \sigma\rangle=0.
+\label{confsigma}
+\eeq
+We also have
+\beq
+|n|=0,\qquad iD= \Lambda^2-m^2
+\label{confnD}
+\eeq
+as follows from (\ref{scphn}).
+
+This solution shows that we have only one $Z_N$ symmetric vacuum now. All other vacua are lifted
+and become quasivacua (metastable at large $N$). This phase is quite similar to the Coulomb/confining phase
+of non-supersymmetric \cpn model found by Witten \cite{W79} at zero masses. Presence 
+of small splitting between quasivacua produces a linear rising confining potential between kinks
+which interpolates between, say, true vacuum and the lowest quasivacuum \cite{GSY05}
+see also review \cite{SYrev}.
+As we already mentioned this linear potential was also interpreted as a Coulomb interaction
+long time ago \cite{Coleman,W79}, see  next section for a more detailed discussion.
+
+As soon as we have a phase with broken $Z_N$ symmetry at small $m$ and $Z_N$ symmetric phase at
+intermediate $m$ we have a phase transition separating these phases. Usually one does not have phase transitions in supersymmetric theories. However, in the model at hand the supersymmetry is
+badly broken ( in fact it is broken already at the classical level) therefore the emergence of 
+a phase transition is not too much surprising. 
+
+We can calculate the vacuum energy to see  the supersymmetry breaking explicitly.
+Substituting (\ref{confsigma}) and (\ref{confnD}) into the effective potential (\ref{Veff})
+we get
+\beq
+E_{vac}=\frac{N}{4\pi}\large[ \Lambda^2-m^2+m^2\ln {\frac{m^2}{\Lambda^2}}\large].
+\label{confEvac}
+\eeq
+We plot the vacuum energy vs. $m$ in Fig.~\ref{figvacE}.
+
+Now observe that although positive at generic values of $m$ the vacuum energy vanishes
+at $m=\Lambda$. This is a signal of \ntwoo supersymmetry restoration. To check this conclusion we can
+compare masses of boson $n^i$ and its fermion superpartner $\xi^i$. From (\ref{bee31}) we see that difference of 
+their masses equals to $iD$. Now (\ref{confnD}) shows that $iD$ vanishes precisely at $m=\Lambda$.
+
+Thus we see an amazing phenomenon: while \ntwoo supersymmetry was broken at the classical level
+it gets restored at the quantum level at the particular point in the parameter space. 
+Condition $|m|=\Lambda$ shows that we are precisely at the \ntwoo descendant of the \ntwot 
+Argyres-Douglas point (\ref{ADpoint}). \ntwoo supersymmetry gets restored at the Argyres-Douglas point.
+This  observation
+was  first made in \cite{Tonghetdyn} using a Veneziano-Yankielowicz-type superpotential for  \ntwot \cpn model \cite{AdDVecSal,ChVa,W93}  extrapolated to the \ntwoo supersymmetric case.
+
+
+
+\begin{center}
+{\bf Higgs phase}
+\end{center}
+
+The Higgs phase occurs in our model at large $m$. As we show below the model goes into the Higgs phase at
+\beq
+m>\sqrt{u}\Lambda
+\label{Hphmass}
+\eeq
+and we keep $u$ large.
+In this phase $|n|$ develop VEV. From Eq.~(\ref{eff2}) we see that
+\beq
+iD=-|\sqrt{2}\sigma -m_0|.
+\label{HphD}
+\eeq
+
+First we  study equations (\ref{eff1})-(\ref{eff3}) at $m\gg \sqrt{u}\Lambda$. 
+In this regime we can drop the second logarithmic term in (\ref{eff3}). The first
+term is much larger because it is   proportional to $\beta_{\rm ren}$ which is large in the quasiclassical region. Then Eq.~(\ref{eff3}) reduces to
+\beq
+(\sqrt{2}\sigma -m_0)\,2\beta_{\rm ren}+\frac{N}{4\pi}\,u\,\sqrt{2}\sigma =0,
+\eeq
+which at large $u$  gives
+\beq
+\sqrt{2}\sigma=\left(\frac{8\pi}{N}\beta_{\rm ren}\right)\,\frac{m_{i_{0}}}{u},
+\label{Hphsigma}
+\eeq
+where we take into account that we can have nonzero VEV for any $n^{i_0}$, $i_0=0,...,(N-1)$.
+Thus we have $N$ degenerative vacua again. In each of them $\sigma$ is small ($\sim m/u$) but
+nonzero. The $Z_{2N}$ chiral symmetry is again broken down to $Z_2$. Clearly the 
+Higgs phase is separated form the Coulomb/confining phase (where $Z_{2N}$ is unbroken) by
+a phase transition.
+
+In each of $N$ vacua $n^{i_0}$ develop VEV,
+\beq
+|n^{i_0}|^2=2\beta_{\rm ren}=\frac{1}{4\pi}\, 
+\sum_{i\neq i_0}\ln\, {\frac{|\sqrt{2}\sigma-m_i|^2 -|\sqrt{2}\sigma-m_{i_0}|^2}{\Lambda^2}}.
+\label{Hphn}
+\eeq
+Since $\sigma$ is small we can expand the r.h.s. in powers of $\sigma$. The leading contribution
+vanishes, while calculating the contribution proportional to $\sigma$ ( given by (\ref{Hphsigma})) we
+get the following equation for $\beta_{\rm ren}$
+\beq
+\frac{8\pi}{N}\beta_{\rm ren}- \ln{\left(\frac{8\pi}{N}\beta_{\rm ren}\right)}=\ln{\frac{m^2}{u\Lambda^2}} +
+{\rm const},
+\label{Hphbetaeq}
+\eeq
+where we can neglect constant term in the first order approximation at $m\gg \sqrt{u}\Lambda$.
+
+This equation has two solutions at large $m$. Keeping only the larger one ( we expect $\beta$ to be large)
+we get approximately
+\beq
+2\beta_{\rm ren}\approx \frac{N}{4\pi}\ln{\frac{m^2}{u\Lambda^2}}. 
+\label{Hphbeta}
+\eeq
+As we reduce $m$, at $m\sim \sqrt{u}\Lambda$ two solutions of (\ref{Hphbetaeq}) coalesce and 
+at smaller $m$ become complex. Since $|n^{i_0}|^2=2\beta_{\rm ren}$ is positively defined this
+signals the point of a phase transition to the Coulomb/confining phase.
+
+To determine the point of the phase transition with better accuracy we have to take into account
+the logarithmic term in Eq.~(\ref{eff3})...
+
+Calculating the vacuum energy in this phase we get
+\beq
+E_{\rm vac}=...
+\eeq
+
+
+
+\section{More on the Coulomb/confining phase}
+
+\newpage
+
+\section{Remarks on mirror for heterotic CP(1) }
+
+
+
+The geometric representatition of  the heterotic CP(1) model is the following deformation
+of the ${\mathcal N}=(2,2)$ model \cite{SY1}:
+\beqn
+&&
+L_{{\rm heterotic}}= 
+\zeta_R^\dagger \, i\partial_L \, \zeta_R  + 
+\left[\gamma \, \zeta_R  \,R\,  \big( i\,\partial_{L}\phi^{\dagger} \big)\psi_R
++{\rm H.c.}\right] -g_0^2|\gamma |^2 \left(\zeta_R^\dagger\, \zeta_R
+\right)\left(R\,  \psi_L^\dagger\psi_L\right)
+\nonumber
+\\[4mm]
+&&
++
+G\, \left\{\rule{0mm}{5mm}
+\partial_\mu \phi^\dagger\, \partial^\mu\phi  
++\frac{i}{2}\big(\psi_L^\dagger\!\stackrel{\leftrightarrow}{\partial_R}\!\psi_L 
++ \psi_R^\dagger\!\stackrel{\leftrightarrow}{\partial_L}\!\psi_R
+\big)\right.
+\nonumber
+\\[4mm] 
+&&
+-\frac{i}{\chi}\,  \big[\psi_L^\dagger \psi_L
+\big(\phi^\dagger \!\stackrel{\leftrightarrow}{\partial_R}\!\phi
+\big)+ \psi_R^\dagger\, \psi_R
+\big(\phi^\dagger\!\stackrel{\leftrightarrow}{\partial_L}\!\phi
+\big)
+\big]
+-
+\frac{2(1- g_0^2 |\gamma |^2)}{\chi^2}\,\psi_L^\dagger\,\psi_L \,\psi_R^\dagger\,\psi_R
+\Big\}\,,
+\label{AAone}
+\eeqn
+where the field $\zeta_R$ appearing in the first line is
+the spinor field on $C$ which appears, with necessity in the ${\mathcal N}=(0,2)$ model \cite{EdTo}.
+Here $G$ is the metric while $R$ is the Ricci tensor.
+To begin with, we let us assume the deformation parameter $\gamma$ to be small (it is dimensionless)
+and work to the leading order in $\gamma$.
+
+Note that 
+\beqn
+&&
+K\big|_{\theta=\bar\theta=0}=\frac{2}{g_{0}^{2}}\,\ln \chi\,, 
+\nonumber
+\\[2mm]
+&&
+G=G_{1\bar 1}=\partial_\phi\partial_{\phi^\dagger\,} 
+K\big|_{\theta=\bar\theta=0}=
+\frac{2}{g_{0}^2\,\chi^{2}}\,,
+\nonumber
+\\[2mm]
+&&
+\Gamma =\Gamma^{1}_{11} =- 2\, \frac{\phi^\dagger\,}{\chi}\,,\quad 
+\bar\Gamma =\Gamma^{\bar 1}_{\bar 1\bar 1}=
+- 2\, \frac{ \phi}{\chi}\,,
+\nonumber
+\\[2mm]
+&&
+ R \equiv  R_{1\bar 1}=-G^{-1}\!R_{1\bar 1 1\bar 1}=\frac{2}{\chi^2}\,,
+\label{Atwo}
+\eeqn
+where the following notation
+is implied:
+\beq
+\chi \equiv 1+\phi\,\phi^\dagger\,.
+\eeq
+Thus, the kinetic terms of the CP(1) fields $\phi$ and $\psi$ contain $\frac{1}{g^2}$ in the normalization
+while $\gamma$ in the first line is defined in conjunction with the Ricci tensor, so that there is no $\frac{1}{g^2}$
+in front of this term. This convention is important for what follows.
+
+Now, let us remember that the undeformed CP(1) model has a mirror representation \cite{MR1,MR2}
+\beq
+{\mathcal L}_{\rm mirror} = \int d^4\theta\, Y^\dagger\, Y + \int d^2\theta\, {\mathcal W}_{\rm mirror}
+(Y) + {\rm H.c.}
+\label{five}
+\eeq
+where 
+\beq
+{\mathcal W}_{\rm mirror} = \Lambda \left( e^Y + e^{-Y}\right)\,,
+\eeq
+and $\Lambda$ is the dynamical scale of the CP(1) model.
+
+The question is: ``what is the mirror representation of the deformed model (\ref{AAone}), to the leading order in $\gamma$?"
+
+Surprisingly, this question has a very simple answer.
+To find the answer let us observe that the term of the first order in $\gamma$ in (\ref{AAone})
+is nothing but the superconformal anomaly in the unperturbed CP(1) model (it is sufficient to consider this anomaly in the unperturbed model since we are after the leading term in $\gamma$ in the mirror representation).
+More exactly, in the CP(1) model
+\beq
+\gamma_\mu J^\mu_{\,\,\alpha} = -\frac{ \sqrt 2}{2\pi}\,R\, \left(\partial_\nu \phi^\dagger\right)\left(
+\gamma^\nu\psi\right)_\alpha\,,
+\label{six}
+\eeq
+where $J^\mu_{\,\,\alpha}$ is the supercurrent.
+In what follows, for simplicity,  numerical factors like $2$ or $\pi$ will be omitted
+This means that the deformation term in (\ref{AAone}) can be written as
+\beq
+\Delta {\mathcal L} = \gamma \zeta_R\left(\gamma_\mu \, J^\mu\right)_L
+\label{seven}
+\eeq 
+
+Since (\ref{six}) has a geometric meaning we can readily rewrite this term in the mirror representation
+(\ref{five}). Indeed, in the generalized Wess-Zumino model
+\beq
+\left(\gamma_\mu \, J^\mu\right)_L
+ = \frac{\partial {\mathcal W}_{\rm mirror}}{\partial Y}\,\psi_L\,.
+ \label{eight}
+\eeq
+This equation is not quite exact, but it is good enough for the time being.
+
+Now, combining (\ref{seven}) and (\ref{eight})
+we get the following deformation of ${\mathcal L}_{\rm mirror}$ (in the leading order in $\gamma$):
+\beq
+\Delta {\mathcal L}_{\rm mirror}= \gamma \, \zeta_R \,\psi_L\,\, \frac{\partial {\mathcal W}_{\rm mirror}}{\partial Y}
++{\rm H.c.}
+\eeq
+
+In superfields this is equivalent to adding to (\ref{five}) the following terms:
+\beq
+\Delta {\mathcal L}_{\rm mirror}  \int d^4\theta {\mathcal B}\, {\mathcal B}^\dagger 
++\gamma \int d\theta_L^\dagger\, \theta_L \,d\theta_L  d\theta_R\,\, {\mathcal B} \,{\mathcal W}_{\rm mirror}
++{\rm H.c.}
+\eeq
+
+This adds up to the scalar potential the term 
+\beq
+\Delta V = |\gamma|^2 \left|{\mathcal W}_{\rm mirror}\right|^2\,.
+\eeq
+Note that a constant shift in ${\mathcal W}_{\rm mirror}$
+becomes an observable physical effect.
+
+\newpage
+
+\section{Different effective Lagrangians}
+
+
+\newpage
+
+\section{Conclusions}
+
+
+\section*{Acknowledgments}
+
+We are grateful to A. Gorsky, Andrey Losev, Victor Mikhailov, and A. Vainshtein for very useful discussions.
+
+%The work of PAB was supported in part by the NSF Grant No. PHY-0554660. PAB is grateful for kind
+%hospitality to FTPI, University of Minnesota, where a part of this work was done. 
+The work of MS was supported in part by DOE grant DE-FG02-94ER408. 
+The work of AY was  supported 
+by  FTPI, University of Minnesota, 
+by RFBR Grant No. 09-02-00457a 
+and by Russian State Grant for 
+Scientific Schools RSGSS-11242003.2.
+
+
+%\newpage
+
+
+\newpage
+
+\section*{Appendix A: \\
+Minkowski vesrus Euclidean formulation}
+\addcontentsline{toc}{section}{Appendix A: \\
+Minkowski vesrus Euclidean formulation}
+ \renewcommand{\theequation}{A.\arabic{equation}}
+\setcounter{equation}{0}
+ 
+ \renewcommand{\thesubsection}{A.\arabic{subsection}}
+\setcounter{subsection}{0}
+
+In the bulk of the paper we use both, Minkowski and Euclidean conventions.
+It is useful to summarize the transition rules.
+If the Minkowski coordinates are
+\beq
+x^\mu_M =\{t,\,z\}\,,
+\eeq
+the passage to the Euclidean space requires
+\beq
+t \to - i\tau\,,
+\eeq
+and the Euclidean coordinates are
+\beq
+x^\mu_M =\{\tau,\,z\}\,.
+\eeq
+The derivatives are defined as follows:
+\beqn
+\pt_L^M &=& \pt_t+\pt_z\,,\qquad \pt_R^M = \pt_t- \pt_z\,,
+\nonumber\\[2mm]
+\pt_L^E &=& \pt_\tau - i \pt_z\,,\qquad \pt_R^M = \pt_\tau + i \pt_z\,.
+\eeqn
+The Dirac spinor is
+\beq
+\Psi =\left(
+\begin{array}{c}
+\psi_R\\[1mm]
+\psi_L
+\end{array}
+\right)
+\eeq
+In passing to the Eucildean space $\Psi^M = \Psi^E$;
+however, $\bar\Psi$ is transformed,
+\beq
+\bar\Psi^M \to i \bar \Psi^E\,.
+\eeq
+Moreover, $\Psi^E$ and $\bar \Psi^E$ are {\em not} related by the complex conjugation operation.
+They become independent variables. The fermion gamma matrices are defined as
+\beq
+\bar\sigma^\mu_M =\{1,\,-\sigma_3\}\,,\qquad \bar\sigma^\mu_E =\{1,\, i\sigma_3\}\,.
+\eeq
+Finally, 
+\beq
+\cell_E =- \cell_M (t=-i\tau , ...).
+\eeq
+With this notation, formally, the fermion kinetic terms in $\cell_E $ and $\cell_M $
+coincide.
+If we want the heterotic deformation term to have the same form in
+$\cell_E $ and $\cell_M $ we must (and do) transform the heterotic deformation parameter as follows:
+\beq
+\gamma_M = i\,\gamma_E\,.
+\eeq
+
+Everywhere where there is no menace of confusion we omit the super/sub\-scripts $M,E$.
+It is obvious from the context where the Euclidean or Minkowski formulation is implied.
+
+
+\newpage
+
+\section*{Appendix B: \\
+Global symmetries of the CP\boldmath{$(N-1)$} model with \boldmath{$Z_{N}$}-symmetric
+ twisted masses}
+\addcontentsline{toc}{section}{Appendix: \\
+Global symmetries of the CP$(N-1)$ model with  $Z_N$-symmetric
+ twisted masses}
+ \renewcommand{\theequation}{B.\arabic{equation}}
+\setcounter{equation}{0}
+ 
+ \renewcommand{\thesubsection}{B.\arabic{subsection}}
+\setcounter{subsection}{0}
+
+Now let us discuss global symmetries of this model. In the absence of the twisted masses
+the model was SU$(N)$ symmetric. The twisted masses (\ref{spch}) explicitly break this symmetry down to U$(1)^{N-1}$,
+\beqn
+n^\ell&\to& e^{i\alpha_\ell}n^\ell\,,\quad \xi^\ell_R \to e^{i\alpha_\ell}\xi^\ell_R\,
+\quad \xi^\ell_L \to e^{i\alpha_\ell}\xi^\ell_L\,,\quad \ell=1,2, ..., N\,,
+\nonumber\\[2mm]
+\sigma
+&\to&
+ \sigma\,,\quad \lambda_{R,L}\to \lambda_{R,L}\,.
+\eeqn
+where $\alpha_\ell$ are $N$ constant phases different for different $\ell$. 
+
+Next, there is a global vectorial U(1) symmetry which rotates all fermions $\xi^\ell$
+in one and the same way, leaving the boson fields intact,
+\beqn
+\xi^\ell_R 
+&\to& 
+e^{i\beta}\xi^\ell_R\,, \quad
+ \xi^\ell_L \to e^{i\beta}\xi^\ell_L\,,\quad \ell=1,2, ..., N\,,
+\nonumber\\[2mm]
+\lambda_R 
+&\to&
+ e^{-i\beta}\lambda_R\,,\quad 
+\lambda_L \to e^{-i\beta}\lambda_L\,,
+\nonumber\\[2mm]
+n^\ell &\to& n^\ell\,,\quad \sigma\to\sigma\,.
+\eeqn
+
+Finally, there is a discrete $Z_{2N}$ symmetry which is of most importance for our purposes.
+Indeed, let us start from the axial U$(1)_R$ transformation which would be a symmetry
+of the classical action at $m=0$ 
+ (it is anomalous, though, under quantum corrections),
+\beqn
+\xi^\ell_R 
+&\to& 
+e^{i\gamma}\xi^\ell_R\,, \quad
+ \xi^\ell_L \to e^{-i\gamma }\xi^\ell_L\,,\quad \ell=1,2, ..., N\,,
+ \nonumber\\[2mm]
+ \lambda_R 
+&\to&
+ e^{i\gamma}\lambda_R\,,\quad 
+ \lambda_L \to e^{-i\gamma}\lambda_L\,,\quad \sigma \to e^{2i\gamma}\sigma\,,
+\nonumber\\[2mm]
+n^\ell
+&\to&
+ n^\ell\,.
+\eeqn
+With $m$ switched on and the chiral anomaly included, this transformation 
+is no longer the symmetry of the model. However, a discrete $Z_{2N}$ subgroup survives both the inclusion of anomaly and $m\neq 0$. This subgroup corresponds to
+\beq
+\gamma_k =\frac{2\pi i k}{2N}\,,\quad k= 1,2, ..., N\,.
+\eeq
+with the simultaneous shift
+\beq
+\ell\to \ell - k\,.
+\eeq
+In other words,
+\beqn
+\xi^\ell_R 
+&\to& 
+e^{i\gamma_k}\xi^{\ell-k}_R\,, \quad
+ \xi^\ell_L \to e^{-i\gamma_k }\xi^{\ell-k}_L\,, 
+ \nonumber\\[2mm]
+ \lambda_R 
+&\to&
+ e^{i\gamma_k}\lambda_R\,,\quad 
+ \lambda_L \to e^{-i\gamma_k}\lambda_L\,,\quad \sigma \to e^{2i\gamma_k}\sigma\,,
+ \nonumber\\[2mm]
+ n^\ell &\to & n^{\ell-k}\,.
+ \label{bee35}
+\eeqn
+This $Z_{2N}$ symmetry  relies on the particular choice of masses 
+given in (\ref{spch}).
+
+The order parameters for the $Z_N$ symmetry are as follows:
+(i) the set of the vacuum expectation values
+$\{ \langle n^1\rangle,\,\, \langle n^2\rangle, \,...\, \langle n^N\rangle\}$
+and (i) the bifermion condensate $\langle  \xi^\dagger_{R,\,\ell}\xi^\ell_L\rangle$.
+Say, a nonvanishing value of $\langle n^1\rangle$ or  $\langle  \xi^\dagger_{R,\,\ell}\xi^\ell_L\rangle$ implies that the $Z_{2N}$ symmetry of the action is broken down to
+$Z_2$. The first order parameter is more convenient for detection
+at large $m$ while the second at small $m$. 
+
+It is instructive to illustrate the above conclusions
+in a different formulation of the sigma model, namely, in the geometrical formulation
+(for simplicity we will consider CP(1); generalization to CP$(N-1)$ is straightforward).
+In components the Lagrangian of the model is
+\beqn
+&&
+{\mathcal L}_{\,  CP(1)}= G\, \Big\{
+\partial_\mu \bar{\phi}\, \partial^\mu\phi -|m|^2{\bar{\phi}\,\phi} 
++\frac{i}{2}\big(\psi_L^\dagger\!\stackrel{\leftrightarrow}{\partial_R}\!\psi_L 
++ \psi_R^\dagger\!\stackrel{\leftrightarrow}{\partial_L}\!\psi_R
+\big)
+\nonumber\\[1mm] 
+&&
+-i\,\frac{1-\bar{\phi}\,\phi}{\chi} \,\big(m\,\psi_L^\dagger \psi_R + \bar m
+\psi_R^\dagger \psi_L
+\big)
+\nonumber\\[1mm] 
+&&
+-\frac{i}{\chi}\,  \big[\psi_L^\dagger \psi_L
+\big(\bar{\phi} \!\stackrel{\leftrightarrow}{\partial_R}\!\phi
+\big)+ \psi_R^\dagger\, \psi_R
+\big(\bar{\phi}\!\stackrel{\leftrightarrow}{\partial_L}\!\phi
+\big)
+\big]
+\nonumber\\[1mm]
+&&
+-
+\frac{2}{\chi^2}\,\psi_L^\dagger\,\psi_L \,\psi_R^\dagger\,\psi_R
+\Big\}\,,
+\label{Aone}
+\eeqn
+where 
+\beq
+\chi = 1+\bar{\phi}\,\phi\,,\quad G= \frac{2}{g_0^2\,\chi^2}\,.
+\eeq
+The $Z_2$ transformation corresponding to (\ref{bee35}) is
+\beq
+\phi \to -\frac{1}{\bar{\phi}}\,,\qquad \psi_R^\dagger \psi_L\to -
+\psi_R^\dagger \psi_L\,.
+\label{bee40}
+\eeq
+ The order parameter which can detect breaking/nonbreaking of the above
+symmetry is
+\beq
+\frac{m}{g_0^2} \left(1- \frac{g_0^2}{2\pi}
+\right)\, \frac{\bar{\phi}\,\phi-1}{\bar{\phi}\,\phi+1} - 
+i R \psi_R^\dagger \psi_L\,.
+\eeq
+Under the transformation (\ref{bee40}) this order parameter changes sign.
+In fact, this is  the central charge of the \ntwo
+sigma model, including the anomaly  \cite{svz}.
+
+Now, what changes if instead of the \ntwo model we will consider nonsupersymmetric 
+CP$(N-1)$ model with twisted masses? Then the part of the Lagrangian (\ref{bee31}) containing fermions must be dropped. The same must be done in the $Z_2$ order parameter.
+As was shown in~\cite{GSY05,GSYphtr}, now at $m>\Lambda$ the $Z_2$ symmetry is broken, while at $m<\Lambda$ unbroken. A phase transition takes place.
+
+
+
+
+
+\newpage
+\vspace{2.5cm}
+
+\small
+\begin{thebibliography}{99}
+\itemsep -2pt
+
+\bibitem{HT1}
+A.~Hanany and D.~Tong,
+%``Vortices, instantons and branes,''
+JHEP {\bf 0307}, 037 (2003)
+[hep-th/0306150].
+%%CITATION = HEP-TH 0306150;%%
+
+\bibitem{ABEKY}
+R.~Auzzi, S.~Bolognesi, J.~Evslin, K.~Konishi and A.~Yung,
+%{\em Non-Abelian superconductors: Vortices and
+%confinement in N = 2
+%SQCD,}
+Nucl.\ Phys.\ B {\bf 673}, 187 (2003)
+[hep-th/0307287].
+%%CITATION = HEP-TH 0307287;%%
+
+\bibitem{SYmon}
+M.~Shifman and A.~Yung,
+%``Non-Abelian string junctions as confined monopoles,''
+Phys.\ Rev.\ D {\bf 70}, 045004 (2004)
+[hep-th/0403149].
+%%CITATION = HEP-TH 0403149;%%
+
+\bibitem{HT2}
+A.~Hanany and D.~Tong,
+%``Vortex strings and four-dimensional gauge dynamics,''
+JHEP {\bf 0404}, 066 (2004)
+[hep-th/0403158].
+%%CITATION = HEP-TH 0403158;%%
+
+\bibitem{Trev}
+D.~Tong,
+  %``Quantum Vortex Strings: A Review,''
+  Annals Phys.\  {\bf 324}, 30 (2009)
+  [arXiv:0809.5060 [hep-th]];
+  %%CITATION = APNYA,324,30;%%
+  M.~Eto, Y.~Isozumi, M.~Nitta, K.~Ohashi and N.~Sakai,
+  %``Solitons in the Higgs phase: The moduli matrix approach,''
+  J.\ Phys.\ A  {\bf 39}, R315 (2006)
+  [arXiv:hep-th/0602170];
+  %%CITATION = JPAGB,A39,R315;%%
+  K.~Konishi,
+  %``The magnetic monopoles seventy-five years later,''
+  Lect.\ Notes Phys.\  {\bf 737}, 471 (2008)
+  [arXiv:hep-th/0702102];
+  %%CITATION = LNPHA,737,471;%%
+M.~Shifman and A.~Yung,
+{\sl Supersymmetric Solitons,}
+(Cambridge University Press, 2009).
+  %%CITATION = HEP-TH/0703267;%%
+
+\bibitem{W79}
+E.~Witten,
+%``Instantons, The Quark Model, And The 1/N Expansion,''
+Nucl.\ Phys.\ B {\bf 149}, 285 (1979).
+%%CITATION = NUPHA,B149,285;%%
+
+\bibitem{W93}
+E.~Witten,
+  %``Phases of N = 2 theories in two dimensions,''
+  Nucl.\ Phys.\ B {\bf 403}, 159 (1993)
+  [hep-th/9301042].
+  %%CITATION = HEP-TH 9301042;%%
+  
+  \bibitem{dadvl}
+  A.~D'Adda, P.~Di Vecchia and M.~Luscher,
+  %``Confinement And Chiral Symmetry Breaking In Cp**N-1 Models With Quarks,''
+  Nucl.\ Phys.\  B {\bf 152}, 125 (1979).
+  %%CITATION = NUPHA,B152,125;%%
+  
+  \bibitem{SYhet}
+  M.~Shifman and A.~Yung,
+  %``Large-N Solution of the Heterotic N=(0,2) Two-Dimensional CP(N-1) Model,''
+  Phys.\ Rev.\  D {\bf 77}, 125017 (2008)
+  [arXiv:0803.0698 [hep-th]].
+  %%CITATION = PHRVA,D77,125017;%%
+  
+  \bibitem{MR1}
+  K.~Hori and C.~Vafa,
+{\em Mirror symmetry,}
+  arXiv:hep-th/0002222.
+  %%CITATION = HEP-TH/0002222;%%
+  
+\bibitem{MR2}
+E.~Frenkel and A.~Losev,
+  %``Mirror symmetry in two steps: A-I-B,''
+  Commun.\ Math.\ Phys.\  {\bf 269}, 39 (2007)
+  [arXiv:hep-th/0505131].
+  %%CITATION = CMPHA,269,39;%%
+  
+\bibitem{EdTo}
+ M.~Edalati and D.~Tong,
+  %``Heterotic vortex strings,''
+  JHEP {\bf 0705}, 005 (2007)
+  [arXiv:hep-th/0703045].
+  %%CITATION = JHEPA,0705,005;%%
+  
+\bibitem{SY1}
+  M.~Shifman and A.~Yung,
+  %``Heterotic Flux Tubes in N=2 SQCD with N=1 Preserving Deformations,''
+  Phys.\ Rev.\  D {\bf 77}, 125016 (2008)
+  [arXiv:0803.0158 [hep-th]].
+  %%CITATION = PHRVA,D77,125016;%%
+  
+  \bibitem{BSY1}
+P.~A.~Bolokhov, M.~Shifman and A.~Yung,
+  %``Description of the Heterotic String Solutions in U(N) SQCD,''
+  Phys. \ Rev. \ D {\bf 79}, 085015 (2009) (Erratum: Phys. Rev. D 80, 049902 (2009))
+  [arXiv:0901.4603 [hep-th]].
+  %%CITATION = ARXIV:0901.4603;%%
+  
+    \bibitem{BSY2}
+  P.~A.~Bolokhov, M.~Shifman and A.~Yung,
+  %``Description of the Heterotic String Solutions in the M Model,''
+  Phys. \ Rev. \ D {\bf 79}, 106001 (2009) (Erratum: Phys. Rev. D 80, 049903 (2009))
+  [arXiv:0903.1089 [hep-th]].
+  %%CITATION = ARXIV:0903.1089;%%  
+  
+      \bibitem{BSY3}
+  P.~A.~Bolokhov, M.~Shifman and A.~Yung,
+{\em Heterotic \nzt \mbox{\cpn} Model with Twisted Masses,}
+  arXiv:0907.2715 [hep-th].
+  %%CITATION = ARXIV:0907.2715;%%
+  
+      \bibitem{orco}
+  E.~Witten,
+  %``A Supersymmetric Form Of The Nonlinear Sigma Model In Two-Dimensions,''
+  Phys.\ Rev.\  D {\bf 16}, 2991 (1977);
+  %%CITATION = PHRVA,D16,2991;%%
+  P.~Di Vecchia and S.~Ferrara,
+  %``Classical Solutions In Two-Dimensional Supersymmetric Field Theories,''
+  Nucl.\ Phys.\  B {\bf 130}, 93 (1977).
+  %%CITATION = NUPHA,B130,93;%%
+
+ \bibitem{Bruno}
+ B.~Zumino,
+  %``Supersymmetry And Kahler Manifolds,''
+  Phys.\ Lett.\  B {\bf 87}, 203 (1979).
+  %%CITATION = PHLTA,B87,203;%%
+
+ \bibitem{rev1}
+ V.~A.~Novikov, M.~A.~Shifman, A.~I.~Vainshtein and V.~I.~Zakharov,
+  %``Two-Dimensional Sigma Models: Modeling Nonperturbative Effects Of Quantum
+  %Chromodynamics,''
+  Phys.\ Rept.\  {\bf 116}, 103 (1984).
+  %%CITATION = PRPLC,116,103;%%
+   
+  \bibitem{rev2} 
+ A.~M.~Perelomov,
+  %``SUPERSYMMETRIC CHIRAL MODELS: GEOMETRICAL ASPECTS,''
+  Phys.\ Rept.\  {\bf 174}, 229 (1989).
+  %%CITATION = PRPLC,174,229;%%
+  
+  \bibitem{WI}
+  E.~Witten,
+  %``Constraints On Supersymmetry Breaking,''
+  Nucl.\ Phys.\  B {\bf 202}, 253 (1982).
+  %%CITATION = NUPHA,B202,253;%%
+  
+  \bibitem{twisted}
+ L.~Alvarez-Gaum\'{e} and D.~Z.~Freedman,
+%``Potentials For The Supersymmetric Nonlinear Sigma Model,''
+Commun.\ Math.\ Phys.\  {\bf 91}, 87 (1983);
+%%CITATION = CMPHA,91,87;%%
+S.~J.~Gates,
+%``Superspace Formulation Of New Nonlinear Sigma Models,''
+Nucl.\ Phys.\ B {\bf 238}, 349 (1984);
+%%CITATION = NUPHA,B238,349;%%
+S.~J.~Gates, C.~M.~Hull and M.~Ro\v{c}ek,
+%``Twisted Multiplets And New Supersymmetric Nonlinear Sigma Models,''
+Nucl.\ Phys.\ B {\bf 248}, 157 (1984).
+%%CITATION = NUPHA,B248,157;%%
+
+\bibitem{BelPo}
+ A.~M.~Polyakov,
+  %``Interaction Of Goldstone Particles In Two-Dimensions. Applications To
+  %Ferromagnets And Massive Yang-Mills Fields,''
+  Phys.\ Lett.\  B {\bf 59}, 79 (1975).
+  %%CITATION = PHLTA,B59,79;%%
+  
+  \bibitem{adam}
+  A.~Ritz, M.~Shifman and A.~Vainshtein,
+  %``Counting domain walls in N = 1 super Yang-Mills,''
+  Phys.\ Rev.\  D {\bf 66}, 065015 (2002)
+  [arXiv:hep-th/0205083].
+  %%CITATION = PHRVA,D66,065015;%%
+  
+  \bibitem{Dor}
+N.~Dorey,
+%``The BPS spectra of two-dimensional
+%supersymmetric gauge theories
+%with  twisted mass terms,''
+JHEP {\bf 9811}, 005 (1998) [hep-th/9806056].
+%%CITATION = HEP-TH 9806056;%%
+  
+  \bibitem{WessBagger}
+J. Wess and J. Bagger, {\em Supersymmetry and Supergravity}, Second Edition,
+Princeton University Press, 1992.
+
+\bibitem{Helgason}
+S. Helgason, {\em Differential geometry, Lie groups and symmetric spaces},
+Academic Press, New York, 1978.
+
+\bibitem{P75}
+A.~M.~Polyakov,
+Phys. Lett. {\bf B59} (1975)79.
+
+
+
+\bibitem{GSY05}
+A.~Gorsky, M.~Shifman and A.~Yung,
+ %``Non-Abelian Meissner effect in Yang-Mills theories at weak
+%coupling,''
+Phys.\ Rev.\ D {\bf 71}, 045010 (2005)
+[hep-th/0412082].
+%%CITATION = HEP-TH 0412082;%%
+
+
+\bibitem{Ferrari}
+F.~Ferrari,
+% ``LARGE N AND DOUBLE SCALING LIMITS IN TWO-DIMENSIONS.''
+JHEP {\bf 0205} 044 (2002)
+[hep-th/0202002].
+
+\bibitem{Ferrari2}
+F.~Ferrari,
+%'' NONSUPERSYMMETRIC COUSINS OF SUPERSYMMETRIC GAUGE THEORIES:
+%QUANTUM SPACE OF PARAMETERS AND DOUBLE SCALING LIMITS.''
+ Phys. Lett. {\bf B496} 212 (2000)
+[hep-th/0003142];
+%``A model for gauge theories with Higgs fields,''
+JHEP {\bf 0106}, 057 (2001)
+[hep-th/0102041].
+  %%CITATION = HEP-TH 0102041;%%
+
+\bibitem{AdDVecSal}
+A.~D'Adda, A.~C.~Davis, P.~DiVeccia and P.~Salamonson,
+%"An effective action for the supersymmetric CP$^{n-1}$ models,"
+Nucl.\ Phys.\ {\bf B222} 45 (1983)
+
+\bibitem{ChVa}
+S.~Cecotti and C. Vafa,
+%"On classification of \ntwo supersymmetric theories,"
+Comm. \ Math. \ Phys. \ {\bf 157} 569 (1993)
+[hep-th/9211097]
+
+
+\bibitem{GSYphtr}
+A.~Gorsky, M.~Shifman and A.~Yung,
+ %``Higgs and Coulomb/confining phases in "twisted-mass" deformed \cpn model,''
+Phys.\ Rev.\ D {\bf 73}, 065011 (2006)
+[hep-th/0512153].
+
+\bibitem{HaHo}
+A.~Hanany and K.~Hori,
+  %``Branes and N = 2 theories in two dimensions,''
+  Nucl.\ Phys.\  B {\bf 513}, 119 (1998)
+  [arXiv:hep-th/9707192].
+  %%CITATION = NUPHA,B513,119;%%
+
+\bibitem{Witten:2005px}
+  E.~Witten,
+  %``Two-dimensional models with (0,2) supersymmetry: Perturbative aspects,''
+  arXiv:hep-th/0504078.
+  %%CITATION = HEP-TH/0504078;%%
+
+\bibitem{Tonghetdyn}
+  D.~Tong,
+  %``The quantum dynamics of heterotic vortex strings,''
+  JHEP {\bf 0709}, 022 (2007)
+  [arXiv:hep-th/0703235].
+  %%CITATION = JHEPA,0709,022;%%
+
+\bibitem{AD}
+P. C.~Argyres and M. R.~Douglas,
+%``New Phenomena in SU(3) Supersymmetric Gauge Theory'' 
+Nucl. \ Phys. \ {\bf B448}, 93 (1995)   
+[arXiv:hep-th/9505062].
+%%CITATION = NUPHA,B448,93;%%
+  
+\bibitem{APSW}
+P. C. Argyres, M. R. Plesser, N. Seiberg, and E. Witten,
+%``New N=2 Superconformal Field Theories in Four Dimensions''
+Nucl. \ Phys.  \ {\bf B461}, 71 (1996) 
+[arXiv:hep-th/9511154].
+%%CITATION = NUPHA,B461,71;%%
+
+  \bibitem{SYrev}
+M.~Shifman and A.~Yung,
+%{\sl Supersymmetric Solitons,}
+Rev.\ Mod.\ Phys. {\bf 79} 1139 (2007)
+[arXiv:hep-th/0703267];
+M.~Shifman and A.~Yung,
+{\sl Supersymmetric Solitons,}
+  Cambridge University Press, 2009.
+  %%CITATION = HEP-TH/0703267;%%
+
+
+\bibitem{Coleman}
+S.~R.~Coleman,
+%``More About The Massive Schwinger Model,''
+Annals Phys.  {\bf 101}, 239 (1976).
+
+
+
+
+
+
+\end{thebibliography}
+
+
+\end{document}

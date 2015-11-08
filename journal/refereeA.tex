@@ -1,0 +1,218 @@
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+
+\section*{Report on DN10622}
+
+Title: Large-$N$ solution of the heterotic $CP(N-1)$ model with
+twisted masses\\
+
+Authors: Pavel A. Bolokhov, Mikhail Shifman, Alexei Yung\\
+
+Physical Review D\\
+
+This is a very good paper with very interesting results and should be
+published in Physical Review D, after some clarifications. Most of the
+questions and suggestions I make below are minor things. There is one
+crucial point that has to be clarified in my opinion (remark 3. to
+section 4). I apologize in advance for any misunderstanding on my side
+and I hope the authors see my questions/suggestions as an input for
+``fine-tuning'' this interesting paper from an reader which is not
+occupied by and involved in the calculations and the elaborations of
+the details.
+
+\subsection*{Section 2}
+
+\begin{enumerate}
+
+\item \underline{equ. (2.2)}: Can one shortly comment here why the
+$Z_N$ symmetric masses are of interest for the microscopic 4D
+gauge theory?
+
+\item Below equ. (2.2) it is stated that ``Without loss of
+generality...'' one can choose $m\in \mathcal{R}_{+}$. On the other
+hand it is explicitly shown in section 4 (equ. 4.24 and following)
+that a complex $m$ allows for additional phenomena.
+
+\end{enumerate}
+
+\subsection*{Section 3}
+
+\begin{enumerate}
+
+\item \underline{equ. (3.13)}: All geometrical quantities are defined
+except the Christoffel symbol. However, the whole subsection is
+otherwise very elaborate, I will come back to this.
+
+\item \underline{equ. (3.23)}: Below this equation it is written ``...
+does not break ${\cal N}=2$ supersymmetry". I guess the notation
+(consistent with the actual paper) should be ``${\cal N}=(2,2)$"
+(though ${\cal N}=2$ was used in previous works). One should perhaps
+say that this is so because the background (3.22) is invariant under
+$4D\ \ {\cal N}=1$ susy (this explains very simple the stated fact,
+which is not obvious from (3.24)).
+
+\end{enumerate}
+
+In general I would like to mention that the review of the geometric
+formulation (also in the deformed case) takes a lot of space and
+somehow breaks the flow of the paper. Especially since these results
+are not needed in the bulk of the paper were the new results are
+discussed (equ. (8.1) is sufficient to understand the subsequent
+discussion).
+
+%\subsection*{Section 3, continued}
+
+\begin{enumerate}
+
+\item \underline{equ. (3.35)}: Below (3.35) it is stated that for $m_l
+=0$ this reduces to the result of [13]. But is (3.35) for general
+$m_l$ not equivalent to the result of [16]?
+
+\item \underline{equ. (3.36)}: The splitting in the boson and fermion
+mass shows that susy is spontaneously broken at the classical level.
+This is not mentioned at this point, though later (below (3.42) and
+end of page 28) this very fact is mentioned with reference to [16].
+One should refer at these places (also) to the explicit demonstration
+of this fact in the actual paper, i.e. equ. (3.36).
+
+\end{enumerate}
+
+\subsection*{Section 4}
+
+\begin{enumerate}
+
+\item \underline{equ. (4.2)}: Below (4.2) it is just said ``we dropped
+the gauge field $A_k$''. It gives the impression here that this is
+justified by the large $N$ approximation. The integration over $A_k$
+gives contribution to the kinetic terms, especially it generates a
+kinetic term for the a priori auxiliary field $A_k$ [6]. This is not
+relevant for the following discussion in the paper and therefore $A_k$
+can be ``dropped'' here (but it appears in section 7). I think it
+would avoid misunderstandings if one makes this distinction clear at
+this point.
+
+\item \underline{equ. (4.18)}: It is stated that (4.18) follows from
+(4.17) in the large $N$ limit. This is not obvious to me, as far as I
+can see this is only true if $\sqrt{2}\sigma \sim \Lambda$ and $m <
+\Lambda$ , which is justified a posteriori.
+
+\item \underline{equ. (4.19)}: This equation is very puzzling, in my
+opinion something is wrong here. It is stated that (4.19) is exact and
+coincides with [35,36,7,37,28]. But the exact pendant of (4.19) is a
+stronger equation, namely for the complex expression without taking
+the absolute value, as given in equ. (4.26) and noted in footnote 7.
+In (4.26) it is referred to it as the ``complexified version'' but it
+is not clear to me how this complexified version should follow from
+the results given in the paper (as far as I can see everything is
+valid to this point also for complex $m$, this cannot be the
+explanation). In particular, the solutions (4.22) are only a subset of
+the solutions of the too weak equation (4.20). For example with
+$\epsilon=m/\Lambda<1$ there is a continuum of solutions
+$\sqrt{2}\sigma =
+(\epsilon^N+\sqrt{1-\epsilon^{2N}\sin^2(N\phi)})^{1/N}e^{i\phi}$ to
+(4.20), also large $N$ does not help here. (4.22) is of course the
+correct set of vacua, so (4.20) cannot be the whole story, something
+is missing here. Perhaps one has to be more careful with the branch
+cut contributions in the effective potential, somehow the holomorphic
+structure is not evident. I don't see an obvious solution to this from
+the equations given in the paper, but this point has to be clarified.
+As far as I can say this problem does not "propagate" to the
+subsequent investigations, and the resolution at this point would be
+sufficient. This is also confirmed by the numerical calculations,
+though I of course cannot say anything about the detailed
+implementation thereof.
+
+\item \underline{equ. (4.25)}: Here one has the same problem as just
+described under 3. Also at the AD point in addition to the correct
+solution $\sigma =0$ exists a continuum of additional solutions to
+(4.20).
+
+\end{enumerate}
+
+\subsection*{Section 5}
+
+\begin{enumerate}
+
+\item \underline{equ. (5.1)}: Above (5.1) one could refer to (3.31) as
+the only difference to the considerations of section 4 thus leading to
+(5.1)
+
+\item \underline{equ. (5.2)}: If I understand correctly $\omega$ is
+the one given in (3.30) (if this is the case one could give a
+reference to (3.30) here). However this is somehow puzzling, see 4., I
+guess there is a renormalization involved. Perhaps one can define
+$\omega$ ($u$) more clearly.
+
+\item \underline{equ. (5.9)}: I think $\beta_{ren}$ has to be replaced
+by $\beta^{(0)}_{ren}$.
+
+\item \underline{equ. (5.13)}: Below (5.13) it is stated that $n$
+vanishes in all orders of $u$. Therefor the same is true for
+$\beta_{ren}$. On the other hand $u\sim \beta \delta$ which would mean
+that also $u$ vanishes (see 2.).
+
+\item \underline{equ. 5.14}: I think there is an ``$=$'' missing in
+the second condition in (5.14).
+
+\end{enumerate}
+
+\subsection*{Section 6}
+
+\begin{enumerate}
+
+\item \underline{equ. (6.2)}: Same question as in 4. of section 5.
+
+\item \underline{page 28}: Last sentence, see 4. of section 3.
+
+\item \underline{page 29}: In the third paragraph it is discussed that
+susy is restored by quantum effects for $m=\Lambda$, with reference to
+[41]. Is the ``remarkable'' observation here that this happens only
+for this particular point? Also for the undeformed ${\cal N}=(2,2)$
+models susy is restored (negative FI-coupling) at the quantum level
+[7,28].
+
+\item \underline{Fig.3}: If I did not overlook it, the dashed line in
+the graph is not explained.
+
+\end{enumerate}
+
+\subsection*{Section 8}
+
+\begin{enumerate}
+
+\item \underline{equ. (8.1)}: The geometric formulation as given here
+would be sufficient for the purpose of the paper. See below 2. of
+section 3.
+
+\item \underline{equ. 8.7}: if I am not mistaken ${\cal{H}}$ is the
+same as $S$ of reference [45], it would be easier for the reader if
+this would be mentioned here.
+
+\item \underline{equ. 8.8}: In (8.8) ${\cal W}{'}$ should be ${\cal
+W}{'}_{mirror}$ I guess. The index $Y$ on $\psi$ is a bit irritating.
+I understand that it should be the fermion in the superfield $Y$, but
+in (8.5) and (8.7) this notation was not used.
+
+\item \underline{equ. (8.15)}: In the paragraph above (8.15), as it is
+formulated, one gets the impression that the superpotential for
+$CP^{N-1}$ models is ``engineered'' to reproduce (anomalous) Ward
+identities. For this models the superpotential has been
+\emph{computed} exactly [36].
+
+\end{enumerate}
+
+To summarize I want to say that I enjoyed very much this very
+interesting paper. The only general issue that I see (besides 3. of
+section 4) is the length of the paper. Given the length of the paper I
+find that the review of the geometric formulation in section 3 breaks
+really the flow of the paper. This formulation is not needed in the
+bulk of the paper and was given elsewhere by the same authors in
+better detail. Perhaps it would tighten the paper a bit if this part
+would be placed in the appendix. As always, things also depend on the
+personal taste and I hope the authors don't misunderstand my
+suggestions/questions as disrespect for their right to put things
+according to their taste. I hope the authors clarify the necessary
+points so that this very good paper can be published.
+
+\end{document}
